@@ -1,1 +1,15 @@
+/* src/styles/global.css */
+
+/* Import Flickity CSS */
 @import 'flickity/dist/flickity.min.css';
+
+/* Your existing global styles */
+* {
+  box-sizing: border-box;
+}
+body { 
+  font-family: 'Fira Code', monospace; 
+  margin: 0;
+  height: 100%;
+}
+/* ... rest of your CSS ... */
