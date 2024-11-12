@@ -24,7 +24,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 20px;
+    padding: 12px 24px; /* Reduced padding */
+    gap: 24px; /* Reduced gap */
     flex-wrap: wrap;
   }
 
@@ -32,14 +33,14 @@
   .footerTextContainer {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px; /* Reduced gap */
     text-align: left; /* Align text to the left */
-    min-width: 150px; /* Ensure minimum width */
+    min-width: 120px; /* Ensure minimum width */
   }
 
   .edit {
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px; /* Reduced font size */
     color: black;
     margin: 0; /* Remove default margins */
   }
@@ -51,15 +52,15 @@
   /* Footer Logo */
   .footerLogo {
     cursor: pointer;
-    width: 100px; /* Adjust as needed */
-    margin-bottom: 10px; /* Space below the logo */
+    width: 80px; /* Reduced width */
+    margin-bottom: 8px; /* Reduced margin */
   }
 
   /* Footer Apps */
   .footerApps {
     cursor: pointer;
-    width: 150px; /* Adjust as needed */
-    margin-top: 5px; /* Space above apps */
+    width: 120px; /* Reduced width */
+    margin-top: 4px; /* Reduced margin */
   }
 
   /* Responsive Design */
@@ -68,16 +69,23 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      padding: 12px 16px; /* Further reduced padding */
     }
 
     .footerTextContainer {
       align-items: center;
       text-align: center;
+      min-width: 100px; /* Further reduced min-width */
     }
 
     .footerLogo,
     .footerApps {
       margin: 0 auto;
+      width: 100px; /* Adjusted width */
+    }
+
+    .edit {
+      font-size: 11px; /* Further reduced font size */
     }
   }
 </style>
