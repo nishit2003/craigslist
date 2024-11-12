@@ -98,19 +98,34 @@
 </script>
 
 <style>
+  /* Ensure the entire app takes at least full height */
+  :global(body, html, #app) {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Main content area */
   main {
+    flex: 1; /* Grow to fill the space */
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    margin: 4em 0;
+    padding-top: 150px; /* Adjust based on navbar height */
+    padding-bottom: 80px; /* Space for the fixed footer */
+    box-sizing: border-box;
+    margin: 0;
   }
+
   .to-nav {
     margin-top: 40px;
     cursor: pointer;
     color: purple;
     transition: color 0.3s;
   }
+
   .to-nav:hover {
     text-decoration: underline;
   }

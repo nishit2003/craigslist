@@ -1,3 +1,5 @@
+<!-- src/components/Navigation.svelte -->
+
 <script>
   // You can add any interactivity here if needed
 </script>
@@ -8,8 +10,8 @@
     width: 100%;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
     padding-top: 18px;
-    background-color: #fff; /* Optional: Set background color */
-    position: fixed; /* Optional: Fix the navbar at the top */
+    background-color: #E7EAEE; /* Set to match the footer */
+    position: fixed; /* Fix the navbar at the top */
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure navbar stays on top */
@@ -75,7 +77,7 @@
   /* Bottom Navigation Bar */
   .bottomNav {
     margin-bottom: 16px;
-    background-color: #f8f8f8; /* Optional: Different background for bottom nav */
+    background-color: #E7EAEE; /* Match the footer's background color */
   }
 
   /* Navigation Menu */
@@ -113,13 +115,14 @@
       gap: 10px;
     }
 
-    .searchBar {
+    .leftElements {
       flex-direction: column;
-      width: 100%;
+      gap: 0.5em;
     }
 
-    .searchInput {
+    .btn {
       width: 100%;
+      text-align: center;
     }
   }
 </style>
@@ -154,5 +157,3 @@
     </ul>
   </div>
 </nav>
-
-  
