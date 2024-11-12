@@ -11,7 +11,7 @@
     .hero-container {
       background-image: linear-gradient(to right, rgba(176,142,215, 0.6), rgba(129,160,223, 0.6)), url('/assets/img/heroImage.svg');
       height: 50vh;
-      margin-top: 20px;
+      margin-top: 90px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -26,7 +26,7 @@
       font-weight: lighter; 
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      /* gap: 16px; */
       filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1));
       width: 70vh;
     }
@@ -77,7 +77,7 @@
     .filterButton {
       font-family: 'Fira Code', monospace;
       border-radius: 100px;
-      background: #fff;
+      margin-top: 0px;
       padding: 4px 12px;  
       cursor: pointer;
       transition: box-shadow 0.3s;
@@ -90,7 +90,7 @@
   <section class="hero-container">
     <div class="hero-details">
       <div class="center-details">
-        <h1 class="heroTitle">PORTLAND, OR</h1>
+        <h1 class="heroTitle">Cincinnati, Ohio</h1>
         <h3>what are you looking for?</h3>
         <div class="searchBar">
           <button class="searchBtn">
