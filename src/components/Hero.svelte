@@ -149,21 +149,7 @@
       <h1 class="heroTitle">Cincinnati, Ohio</h1>
       <h3>what are you looking for?</h3>
       <div class="searchBar">
-        <div class="dropdown">
-          <div class="searchBtn" on:click={toggleDropdown} tabindex="0">
-            {selectedFilter}
-            <img class="searchIcon" src="/assets/img/down-arrow.svg" alt="Dropdown">
-          </div>
-          {#if showDropdown}
-            <div class="dropdown-menu">
-              {#each filters as filter}
-                <button class="dropdown-item" on:click={() => selectFilter(filter)} role="menuitem" on:keydown={(e) => e.key === 'Enter' && selectFilter(filter)}>
-                  {filter}
-                </button>
-              {/each}
-            </div>
-          {/if}
-        </div>
+        
         <input
           class="searchInput"
           type="text"

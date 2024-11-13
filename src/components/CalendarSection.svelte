@@ -3,9 +3,12 @@
   import Flickity from "flickity";
   import "flickity/dist/flickity.min.css";
   import { Datepicker, P } from "flowbite-svelte";
-  let selectedDate = null;
 
+  let selectedDate = null;
   let flkty;
+
+  // Option 1: Direct binding (try this first)
+  // If this doesn’t work, remove `bind:value` and use Option 2
 
   onMount(() => {
     flkty = new Flickity(".main-carousel", {
@@ -17,6 +20,11 @@
       flkty.destroy();
     };
   });
+
+  // Option 2: Event listener if direct binding fails
+  function handleDateChange(event) {
+    selectedDate = event.detail.date;
+  }
 </script>
 
 <section class="calendar-section">
@@ -24,12 +32,12 @@
     <div class="left-details">
       <h2>event calendar</h2>
       <div class="width-600px color: black">
-        <Datepicker inline bind:value={selectedDate} />
-        <P class="mt-4"
-          >Selected date: {selectedDate
-            ? selectedDate.toLocaleDateString()
-            : "None"}</P
-        >
+        <!-- Option 1: Bind value directly -->
+        <Datepicker inline bind:value={selectedDate} on:change={handleDateChange} />
+        
+        <P class="mt-4">
+          Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}
+        </P>
       </div>
     </div>
     <div class="rightDetails">
@@ -37,38 +45,23 @@
       <!-- Flickity Carousel -->
       <div class="main-carousel">
         <div class="carousel-cell">
-          <img
-            class="gallery-img"
-            src="/assets/img/unsplash/concert.jpg"
-            alt="concert"
-          />
+          <img class="gallery-img" src="/assets/img/unsplash/concert.jpg" alt="concert" />
         </div>
         <div class="carousel-cell">
-          <img
-            class="gallery-img"
-            src="/assets/img/unsplash/thrifting.jpg"
-            alt="thrifting"
-          />
+          <img class="gallery-img" src="/assets/img/unsplash/thrifting.jpg" alt="thrifting" />
         </div>
         <div class="carousel-cell">
-          <img
-            class="gallery-img"
-            src="/assets/img/unsplash/concert.jpg"
-            alt="concert"
-          />
+          <img class="gallery-img" src="/assets/img/unsplash/concert.jpg" alt="concert" />
         </div>
       </div>
-      <h3 class="event-details">event title</h3>
-      <h3 class="event-subdetails">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </h3>
+      <h3 class="event-details">Live Concert</h3>
+      <h3 class="event-subdetails">Enjoy an evening of live music and entertainment.</h3>
     </div>
   </div>
 </section>
 
 <style>
-
-  h3{
+  h3 {
     color: black;
   }
 
@@ -91,12 +84,7 @@
   .rightDetails {
     flex: 1;
   }
-  .cal-placeholder {
-    width: 282px;
-    height: 278px;
-  }
   .main-carousel {
-    /* background: #e7eaee; */
     width: 600px;
     height: 259px;
     box-shadow: 0px 6px 2px rgba(0, 0, 0, 0.1);
@@ -106,7 +94,6 @@
     margin-right: 30px;
     overflow: hidden;
     height: 259px;
-    /* background-color: #e7eaee; */
     border-radius: 5px;
   }
   .gallery-img {

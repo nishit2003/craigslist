@@ -22,7 +22,7 @@ import { categoriesData } from './data/data.js';
   {#each Object.entries(categoriesData) as [key, data]}
     <CategorySection id="{key}" title="{data.title}" categories="{data.categories}"></CategorySection>
   {/each}
-  <a href="#nav">
+  <a href="#nav" class="mb-40">
     <h3 class="to-nav">back to the top ^</h3>
   </a>
 </main>
