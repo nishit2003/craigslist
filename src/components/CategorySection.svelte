@@ -2,7 +2,7 @@
 
 <script>
   import { onMount } from 'svelte';
-  //import Flickity from 'flickity';
+  import Flickity from 'flickity'; // Ensure you have Flickity installed
 
   export let id = '';
   export let title = '';
@@ -27,6 +27,7 @@
       console.log('Categories:', categories);
     }
 
+    // Cleanup Flickity on component destroy
     return () => {
       if (flkty) {
         flkty.destroy();
@@ -50,6 +51,7 @@
     font-size: 23px;
     margin-bottom: 16px;
     text-transform: capitalize; /* Capitalize titles for consistency */
+    color: #4E1E86; /* Update this to the color you want for the row title */
   }
   .row-carousel {
     background: white;
@@ -136,4 +138,3 @@
     </div>
   </div>
 </div>
-

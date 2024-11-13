@@ -2,6 +2,19 @@
 
 <script>
   // Add any interactivity here if needed
+  import LocationModal from './location.svelte';
+
+
+  let showLocationModal = false;
+
+  function toggleLocationModal() {
+    showLocationModal = !showLocationModal;
+  }
+  function handleKeydown(event) {
+    if (event.key === 'Enter') {
+      toggleLocationModal();
+    }
+  }
 </script>
 
 <style>
@@ -164,8 +177,14 @@
         <li class="menuItem"><a href="#services">services</a></li>
         <li class="menuItem"><a href="#community">community</a></li>
         <li class="menuItem"><a href="#forum">discussion forums</a></li>
-        <li class="menuItem"><a href="#footer">about us</a></li>
+        <li class="menuItem">
+          <!-- svelte-ignore a11y-missing-attribute -->
+          <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal} on:keydown={handleKeydown}>
+            change location
+          </a>
+        </li>
       </ul>
     </div>
   </div>
+  <LocationModal showModal={showLocationModal} onClose={toggleLocationModal} />
 </nav>
