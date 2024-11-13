@@ -1,5 +1,4 @@
 <!-- src/components/CategorySection.svelte -->
-
 <script>
   import { onMount } from 'svelte';
   import Flickity from 'flickity'; // Ensure you have Flickity installed
@@ -12,6 +11,8 @@
   let flkty;
 
   onMount(() => {
+    console.log(`Category Section Loaded: ${title}`, categories); // Log categories for debugging
+
     if (carouselElement) {
       flkty = new Flickity(carouselElement, {
         groupCells: true,
@@ -22,9 +23,8 @@
         wrapAround: false, // Disable wrap-around to prevent carousel from looping infinitely
       });
 
-      // Debugging: Log initialization and categories data
-      console.log(`Initializing Flickity for category: ${title}`);
-      console.log('Categories:', categories);
+      // Debugging: Log Flickity initialization
+      console.log(`Flickity initialized for ${title}`);
     }
 
     // Cleanup Flickity on component destroy
@@ -50,8 +50,8 @@
   .row-title {
     font-size: 23px;
     margin-bottom: 16px;
-    text-transform: capitalize; /* Capitalize titles for consistency */
-    color: #4E1E86; /* Update this to the color you want for the row title */
+    text-transform: capitalize;
+    color: #4E1E86;
   }
   .row-carousel {
     background: white;
@@ -83,8 +83,8 @@
     margin: 0;
     padding: 8px 0;
     font-size: 16px;
-    font-weight: 400; /* Ensure consistent font weight */
-    text-transform: capitalize; /* Capitalize titles for consistency */
+    font-weight: 400;
+    text-transform: capitalize;
   }
   /* Flickity button styles */
   .flickity-button.flickity-prev-next-button {
@@ -92,7 +92,7 @@
     height: 30px;
     border-radius: 5px;
     background: none;
-    top: 50%; /* Center vertically */
+    top: 50%;
     transform: translateY(-50%);
   }
   .flickity-button.flickity-prev-next-button:hover {
