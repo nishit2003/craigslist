@@ -19,6 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 30px;
     }
     .hero-details {
       text-align: left;
@@ -110,7 +111,7 @@
       </div>
       <h3>popular searches:</h3>
       <span class="filterRow">
-        <button class="filterButton">cars</button>
+        <button class="filterButton" >cars</button>
         <button class="filterButton">room for rent</button>
         <button class="filterButton">free stuff</button>
         <button class="filterButton">video games</button>
