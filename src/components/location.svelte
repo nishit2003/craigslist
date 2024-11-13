@@ -1,6 +1,6 @@
 <!-- src/components/LocationModal.svelte -->
 <script>
-	import { color } from './../../node_modules/.pnpm/flowbite-svelte@0.47.3_rollup@4.25.0_svelte@4.2.19/node_modules/flowbite-svelte/dist/badge/Badge.svelte.d.ts';
+	
   export let showModal = false;
   export let onClose;
 
