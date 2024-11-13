@@ -96,7 +96,7 @@
     list-style: none; /* Remove bullets */
     margin: 0;
     padding: 0;
-    gap: 16px; /* Reduced gap between menu items */
+    gap: 46px; /* Reduced gap between menu items */
   }
 
   /* Menu Items */
