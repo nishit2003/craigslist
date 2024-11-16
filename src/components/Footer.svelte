@@ -77,9 +77,16 @@
     <img class="footerLogo" src="/assets/img/logo-footer.svg" alt="Footer Logo">
     
     <div class="footerInner">
-    <h5 class="footerLink">View Source Code</h5>
+      <a hraf="/" class="footerLink">Home</a>
+      <a href="https://github.com/nishit2003/craigslist">
+    <h5 class="footerLink" >View Source Code</h5>
+    </a>
+    <a href="">
     <h5 class="footerLink">Privacy Policy</h5>
-    <h5 class="footerLink">Terms and Conditions</h5>
+    </a>
+    <a href="https://cincinnati.craigslist.org/">
+    <h5 class="footerLink">View Original Site</h5>
+    </a>
   </div>
     
     <div class="footerTextContainer">
