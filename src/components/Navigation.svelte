@@ -4,10 +4,11 @@
   // Add any interactivity here if needed
   import LocationModal from './location.svelte';
   import NewList from './newList.svelte';
-
+  import Signin from './signin.svelte';
 
   let showLocationModal = false;
   let showNewListModal = false;
+  let showSigninModal = false;
 
   function toggleLocationModal() {
     showLocationModal = !showLocationModal;
@@ -22,6 +23,9 @@
     showNewListModal = !showNewListModal;
   }
 
+  function toggleSigninModal() {
+      showSigninModal = !showSigninModal;
+    }
 </script>
 
 <style>
@@ -119,6 +123,14 @@
     gap: 46px; /* Reduced gap between menu items */
   }
 
+  .headerP {
+    font-weight: 400;
+    margin: 0;
+    font-size: 0.9rem; /* Reduced font size */
+    color: #4E1E86;
+    cursor: pointer;
+  }
+
   /* Menu Items */
   .menuItem > a {
     text-decoration: none;
@@ -168,9 +180,9 @@
         
           <button class="btn" on:click={toggleNewListingModal} >+ listing</button>
       
-        <a href="/log-in" class="loginLink" aria-label="Log in or sign up">
-          <p class="headerP">log-in/sign-up</p>
-        </a>
+        
+          <p class="headerP" on:click={toggleSigninModal}>log-in/sign-up</p>
+        
       </div>
     </div>
     
@@ -195,4 +207,7 @@
   </div>
   <LocationModal showModal={showLocationModal} onClose={toggleLocationModal} />
   <NewList showModal={showNewListModal} onClose={toggleNewListingModal} />
+  <Signin showModal={showSigninModal} onClose={toggleSigninModal} />
+
+
 </nav>
