@@ -3,18 +3,25 @@
 <script>
   // Add any interactivity here if needed
   import LocationModal from './location.svelte';
+  import NewList from './newList.svelte';
 
 
   let showLocationModal = false;
+  let showNewListModal = false;
 
   function toggleLocationModal() {
     showLocationModal = !showLocationModal;
   }
-  function handleKeydown(event) {
-    if (event.key === 'Enter') {
-      toggleLocationModal();
-    }
+  // function handleKeydown(event) {
+  //   if (event.key === 'Enter') {
+  //     toggleLocationModal();
+  //   }
+  // }
+
+  function toggleNewListingModal() {
+    showNewListModal = !showNewListModal;
   }
+
 </script>
 
 <style>
@@ -158,9 +165,9 @@
         <img src="/assets/img/logo.svg" alt="Logo">
       </a>
       <div class="leftElements">
-        <a class="loginLink" href="/log-in">
-          <button class="btn">+ listing</button>
-        </a>
+        
+          <button class="btn" on:click={toggleNewListingModal} >+ listing</button>
+      
         <a href="/log-in" class="loginLink" aria-label="Log in or sign up">
           <p class="headerP">log-in/sign-up</p>
         </a>
@@ -179,7 +186,7 @@
         <li class="menuItem"><a href="#forum">discussion forums</a></li>
         <li class="menuItem">
           <!-- svelte-ignore a11y-missing-attribute -->
-          <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal} on:keydown={handleKeydown}>
+          <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal}>
             change location
           </a>
         </li>
@@ -187,4 +194,5 @@
     </div>
   </div>
   <LocationModal showModal={showLocationModal} onClose={toggleLocationModal} />
+  <NewList showModal={showNewListModal} onClose={toggleNewListingModal} />
 </nav>
