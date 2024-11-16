@@ -13,7 +13,6 @@
   }
 
   /* Inner Footer Content */
-  /* Inner Footer Content */
   .footerInner {
     max-width: 1200px;
     margin: 0 auto;
@@ -43,17 +42,6 @@
     text-align: left;
     min-width: 150px;
   }
-/* 
-  .footerLink {
-    cursor: pointer;
-    font-size: 13px;
-    color: black;
-    margin: 0; */
-  /* } */
-
-  .footerLink:hover {
-    color: purple;
-  }
 
   /* Footer Logo */
   .footerLogo {
@@ -68,30 +56,41 @@
     margin-top: 8px;
   }
 
+  .footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 56px;
+  }
+
   /* Responsive Design */
-  
 </style>
 
 <footer id="footer">
   <div class="footerInner">
+    <!-- Footer Logo -->
     <img class="footerLogo" src="/assets/img/logo-footer.svg" alt="Footer Logo">
     
-    <div class="footerInner">
-      <a hraf="/" class="footerLink">Home</a>
-      <a href="https://github.com/nishit2003/craigslist">
-    <h5 class="footerLink" >View Source Code</h5>
-    </a>
-    <a href="">
-    <h5 class="footerLink">Privacy Policy</h5>
-    </a>
-    <a href="https://cincinnati.craigslist.org/">
-    <h5 class="footerLink">View Original Site</h5>
-    </a>
-  </div>
-    
+    <!-- Footer Links -->
+    <div class = "footer-inner">
+      <a href="/" class="footerLink">Home</a>
+      <a href="https://github.com/nishit2003/craigslist" target="_blank" class="footerLink">
+        View Source Code
+      </a>
+      <a href="#" class="footerLink">Privacy Policy</a>
+      <a href="https://cincinnati.craigslist.org/" target="_blank" class="footerLink">
+        View Original Site
+      </a>
+    </div>
+
+    <!-- Footer App Downloads -->
     <div class="footerTextContainer">
       <h5 class="footerLink">Download App:</h5>
-      <img class="footerApps" src="/assets/img/apps.svg" alt="Apps">
+      <a href="https://play.google.com/store/apps/details?id=org.craigslist.CraigslistMobile&hl=en_US&pli=1">
+        <img class="footerApps" src="/assets/img/apps.svg" alt="Apps">
+      </a>
     </div>
-  </div> 
+  </div>
 </footer>
