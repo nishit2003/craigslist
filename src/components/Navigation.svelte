@@ -176,10 +176,10 @@
       </a>
       <div class="leftElements">
         
-          <button class="btn" on:click={toggleNewListingModal} >+ listing</button>
+          <button class="btn" on:click={toggleNewListingModal} >+ Listing</button>
       
         
-          <p class="headerP" on:click={toggleSigninModal}>log-in/sign-up</p>
+          <p class="headerP" on:click={toggleSigninModal}>Log-In/Sign-Up</p>
         
       </div>
     </div>
@@ -187,16 +187,16 @@
     <!-- Bottom Navigation -->
     <div class="bottomNav">
       <ul class="navMenu">
-        <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}>for sale</a></li>
-        <li class="menuItem"><a href="#housing" on:click={handleTabClick}>housing</a></li>
-        <li class="menuItem"><a href="#jobs" on:click={handleTabClick}>jobs</a></li>
-        <li class="menuItem"><a href="#gigs" on:click={handleTabClick}>gigs</a></li>
-        <li class="menuItem"><a href="#services" on:click={handleTabClick}>services</a></li>
-        <li class="menuItem"><a href="#community" on:click={handleTabClick}>community</a></li>
-        <li class="menuItem"><a href="#forum" on:click={handleTabClick}>discussion forums</a></li>
+        <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}>For Sale</a></li>
+        <li class="menuItem"><a href="#housing" on:click={handleTabClick}>Housing</a></li>
+        <li class="menuItem"><a href="#jobs" on:click={handleTabClick}>Jobs</a></li>
+        <li class="menuItem"><a href="#gigs" on:click={handleTabClick}>Gigs</a></li>
+        <li class="menuItem"><a href="#services" on:click={handleTabClick}>Services</a></li>
+        <li class="menuItem"><a href="#community" on:click={handleTabClick}>Community</a></li>
+        <li class="menuItem"><a href="#forum" on:click={handleTabClick}>Discussion Forums</a></li>
         <li class="menuItem">
           <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal}>
-            change location
+            Change Location
           </a>
         </li>
       </ul>
