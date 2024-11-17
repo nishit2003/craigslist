@@ -179,7 +179,8 @@
           <button class="btn" on:click={toggleNewListingModal} >+ Listing</button>
       
         
-          <p class="headerP" on:click={toggleSigninModal}>Log-In/Sign-Up</p>
+          <!-- <p class="headerP" on:click={toggleSigninModal}>Log-In/Sign-Up</p> -->
+          <button class="headerP" on:click={toggleSigninModal}>Log-In/Sign-Up</button>
         
       </div>
     </div>
@@ -195,9 +196,9 @@
         <li class="menuItem"><a href="#community" on:click={handleTabClick}><strong>Community</strong></a></li>
         <li class="menuItem"><a href="#forum" on:click={handleTabClick}><strong>Discussion Forums</strong></a></li>
         <li class="menuItem">
-          <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal}>
-          <strong>Change Location</strong>
-          </a>
+          <button class="change-location-button" on:click={toggleLocationModal} on:keydown={(e) => { if (e.key === 'Enter') toggleLocationModal(); }}>
+            <strong>Change Location</strong>
+          </button>          
         </li>
       </ul>
     </div>
