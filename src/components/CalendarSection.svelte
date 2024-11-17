@@ -3,14 +3,12 @@
   import Flickity from "flickity";
   import "flickity/dist/flickity.min.css";
   import { Datepicker, P } from "flowbite-svelte";
-  import EventModal from "./event.svelte"; // Import EventModal component
 
   let selectedDate = null;
-  let showModal = false;
-  let randomEvents = [];
+  let randomEvent = null; // Store a single random event here
   let flkty;
 
-  // Sample events list
+  // Sample events list with dynamic venue and time generation
   const events = [
     { title: "Live Concert", description: "An evening of live music and entertainment." },
     { title: "Food Festival", description: "Taste dishes from around the world." },
@@ -35,38 +33,56 @@
     };
   });
 
-  // Function to pick three random events from the events list
-  function getRandomEvents() {
-    const shuffled = [...events].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
+  // Function to generate dynamic venue and time for an event
+  function addDynamicDetails(event) {
+    event.venue = `Venue ${Math.floor(Math.random() * 100)}`; // Generate random venue
+    const hour = Math.floor(Math.random() * 12) + 1; // Random hour
+    const minutes = Math.floor(Math.random() * 60).toString().padStart(2, "0"); // Random minutes
+    const period = Math.random() > 0.5 ? "AM" : "PM"; // Random AM/PM
+    event.time = `${hour}:${minutes} ${period}`; // Combine time details
+    return event;
   }
 
-  // Triggered when date changes
-  function handleDateChange(event) {
-    selectedDate = event.detail.date;
-    randomEvents = getRandomEvents(); // Pick 3 random events
-    showModal = true; // Show the modal
+  // Function to pick a single random event
+  function getRandomEvent() {
+    const randomIndex = Math.floor(Math.random() * events.length);
+    return addDynamicDetails({ ...events[randomIndex] }); // Add dynamic details to the random event
   }
 
-  function closeModal() {
-    showModal = false;
+  // Reactive block to monitor selectedDate changes
+  $: if (selectedDate) {
+    console.log("Selected Date Updated:", selectedDate);
+    randomEvent = getRandomEvent(); // Update random event whenever the date changes
+    console.log("Random Event:", randomEvent);
   }
 </script>
 
 <section class="calendar-section">
   <div class="calendar-details">
     <div class="left-details">
-      <h2>event calendar</h2>
+      <h2>Event Calendar</h2>
       <div class="datepicker-container">
-        <Datepicker color="purple" inline bind:value={selectedDate} on:change={handleDateChange} />
+        <!-- Datepicker -->
+        <Datepicker color="purple" inline bind:value={selectedDate} />
 
         <P class="mt-4">
-          Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}
+          Selected Date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}
         </P>
+
+        <!-- Show random event if one is selected -->
+        {#if randomEvent}
+          <div class="random-event mt-4">
+            <h3>{randomEvent.title}</h3>
+            <p>{randomEvent.description}</p>
+            <p><strong>Venue:</strong> {randomEvent.venue}</p>
+            <p><strong>Time:</strong> {randomEvent.time}</p>
+          </div>
+        {/if}
       </div>
     </div>
+
     <div class="rightDetails">
-      <h2>upcoming events:</h2>
+      <h2>Upcoming Events:</h2>
       <div class="main-carousel">
         <div class="carousel-cell">
           <img class="gallery-img" src="/assets/img/unsplash/concert.jpg" alt="concert" />
@@ -78,20 +94,17 @@
           <img class="gallery-img" src="/assets/img/unsplash/concert.jpg" alt="concert" />
         </div>
       </div>
-      <h3 class="event-details">Live Concert</h3>
-      <h3 class="event-subdetails">Enjoy an evening of live music and entertainment.</h3>
+      <h3 class="event-details">Live Concert @Probasco Auditorium</h3>
+      <h3 class="event-subdetails">
+        Enjoy an evening of live music and entertainment. Starts at 8 PM on Dec
+        14th.
+      </h3>
     </div>
   </div>
-
-  <!-- Show modal if showModal is true -->
-  {#if showModal}
-    <EventModal events={randomEvents} onClose={closeModal} />
-  {/if}
 </section>
 
 <style>
-  /* Existing styles and adjustments for the calendar section */
-
+  /* Styling for the section and components */
   h3 {
     color: black;
   }
@@ -119,50 +132,20 @@
     width: 100%;
     color: black;
   }
-  .datepicker-container .datepicker-header {
+  .random-event {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+  .random-event h3 {
     color: #4e1e86;
-    font-weight: bold;
+    margin: 0;
+    margin-bottom: 0.5rem;
   }
-  .datepicker-container .datepicker-nav-button {
-    color: #4e1e86;
-    font-weight: bold;
-    padding: 0.2rem;
-    font-size: 1.2em;
-  }
-  .datepicker-container .datepicker-nav-button:hover {
-    color: #6c42a1;
-  }
-  .datepicker-container .selected-date {
-    background-color: #4e1e86;
-    color: white;
-    border-radius: 50%;
-  }
-  .main-carousel {
-    width: 600px;
-    height: 259px;
-    box-shadow: 0px 6px 2px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px;
-  }
-  .carousel-cell {
-    margin-right: 30px;
-    overflow: hidden;
-    height: 259px;
-    border-radius: 5px;
-  }
-  .gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .event-details {
-    font-weight: 500;
-    margin-bottom: 0px;
-    margin-top: 41px;
-  }
-  .event-subdetails {
-    margin: 0px;
-  }
-  h2 {
-    color: #4e1e86;
+  .random-event p {
+    margin: 0.2rem 0;
+    color: #555;
   }
 </style>

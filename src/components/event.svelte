@@ -1,68 +1,88 @@
-<!-- src/components/EventModal.svelte -->
 <script>
   export let events = [];
   export let onClose;
 
-  // Close modal with Enter or Escape key when on the close button
-  function handleKeydown(event) {
-    if (event.key === 'Enter' || event.key === 'Escape') {
+  function handleClose(event) {
+    if (event.target.classList.contains("modal-background")) {
       onClose();
     }
   }
 </script>
 
 <style>
-  .modal-overlay {
+  .modal-background {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 1000;
+    align-items: center;
+    z-index: 2000;
+    
   }
+
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: purple;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
     width: 90%;
-    max-width: 500px;
-    text-align: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
   }
+
   .close-button {
-    background: #4e1e86;
-    color: white;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
     border: none;
-    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
+    color: #333;
   }
-  .event-item {
-    margin: 10px 0;
+
+  .event {
+    margin-bottom: 1.5rem;
+  }
+
+  .event h3 {
+    margin: 0 0 0.5rem;
+    color: #4e1e86;
+  }
+
+  .event p {
+    margin: 0.2rem 0;
+    color: #555;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>
 
-<!-- Modal overlay with proper role and event handling on close button only -->
-<div class="modal-overlay" role="dialog" aria-modal="true" on:click={onClose}>
-  <div class="modal-content" on:click|stopPropagation>
-    <h3>Events for Selected Date</h3>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div class="modal-background" on:click={handleClose}>
+  <div class="modal-content">
+    <button class="close-button" on:click={onClose}>&times;</button>
+    <h2>Events for {new Date().toLocaleDateString()}</h2>
     {#each events as event}
-      <div class="event-item">
-        <h4>{event.title}</h4>
-        <p>{event.description}</p>
+      <div class="event">
+        <h3>{event.title}</h3>
+        <p><strong>Description:</strong> {event.description}</p>
+        <p><strong>Venue:</strong> Random Venue {Math.floor(Math.random() * 100)}</p>
+        <p><strong>Time:</strong> {Math.floor(Math.random() * 12) + 1}:00 {Math.random() > 0.5 ? "AM" : "PM"}</p>
       </div>
     {/each}
-    <button
-      class="close-button"
-      on:click={onClose}
-      on:keydown={handleKeydown}
-      aria-label="Close modal"
-    >
-      Close
-    </button>
   </div>
 </div>
