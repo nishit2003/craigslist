@@ -60,6 +60,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s;
+  }
+
+  .carousel-cell:hover {
+    transform: scale(1.05);
   }
 
   /* Images within carousel cells */
@@ -78,6 +83,17 @@
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
+  }
+
+  /* Link Styles */
+  a {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+  }
+
+  a:focus {
+    outline: 2px solid purple;
+    outline-offset: 2px;
   }
 
   /* Responsive Adjustments */
@@ -113,10 +129,19 @@
   <div class="carousel-container">
     <Carousel {options}>
       {#each categories as category}
-        <div class="carousel-cell">
-          <img src={category.image} alt={category.alt} loading="lazy" />
-          <h3 class="card-title">{category.title}</h3>
-        </div>
+        {#if category.url}
+          <a href="{category.url}" target="_blank" rel="noopener noreferrer">
+            <div class="carousel-cell">
+              <img src="{category.image}" alt="{category.alt}" loading="lazy" />
+              <h3 class="card-title">{category.title}</h3>
+            </div>
+          </a>
+        {:else}
+          <div class="carousel-cell">
+            <img src="{category.image}" alt="{category.alt}" loading="lazy" />
+            <h3 class="card-title">{category.title}</h3>
+          </div>
+        {/if}
       {/each}
     </Carousel>
   </div>

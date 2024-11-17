@@ -6,36 +6,43 @@ export const categoriesData = {
         image: "/assets/img/unsplash/forSale-general.png",
         alt: "general",
         title: "General",
+        url: 'https://cincinnati.craigslist.org/search/sss#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/forSale-electronics.jpg",
         alt: "electronics",
         title: "Electronics",
+        url: 'https://cincinnati.craigslist.org/search/ela#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/forSale-automotive.jpg",
         alt: "automotive",
         title: "Automotive",
+        url: 'https://cincinnati.craigslist.org/search/cta#search=1~gallery~0~0' 
       },
       {
         image: "/assets/img/unsplash/forSale-entertainment.jpg",
         alt: "entertainment",
         title: "Entertainment",
+        url: 'https://cincinnati.craigslist.org/search/ema#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/forSale-accessories.jpg",
         alt: "accessories",
-        title: "Accessories",
+        title: "Clothes and Accessories",
+        url: 'https://cincinnati.craigslist.org/search/cla#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/forSale-supplies.jpg",
         alt: "household supplies",
         title: "Household Supplies",
+        url: 'https://cincinnati.craigslist.org/search/hsa#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/forSale-heavyEquipment.jpg",
         alt: "heavy equipment",
         title: "Heavy Equipment",
+        url: 'https://cincinnati.craigslist.org/search/hva#search=1~gallery~0~0'
       },
     ],
   },
@@ -45,52 +52,62 @@ export const categoriesData = {
       {
         image: "/assets/img/unsplash/housing-housing.jpg",
         alt: "housing image",
-        title: "Apt/Housing",
+        title: "Apartments/Housing for rent",
+        url: 'https://cincinnati.craigslist.org/search/apa#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-housingWanted.jpg",
         alt: "housing wanted",
         title: "Housing Wanted",
+        url: 'https://cincinnati.craigslist.org/search/hou#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-housingSwap.jpg",
         alt: "housing swap",
         title: "Housing Swap",
+        url: 'https://cincinnati.craigslist.org/search/hsw#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-commercial.jpg",
         alt: "office",
         title: "Office/Commercial",
+        url: 'https://cincinnati.craigslist.org/search/off#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-roomsWanted.jpg",
         alt: "rooms wanted",
         title: "Rooms Wanted",
+        url: 'https://cincinnati.craigslist.org/search/sha#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-parking.jpg",
         alt: "parking or storage",
         title: "Parking/Storage",
+        url: 'https://cincinnati.craigslist.org/search/prk#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-realEstate.jpg",
         alt: "real estate",
         title: "Real Estate",
+        url: 'https://cincinnati.craigslist.org/search/rea#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-rooms-shared.jpg",
         alt: "rooms or shared",
         title: "Rooms/Shared",
+        url: 'https://cincinnati.craigslist.org/search/sha#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-sublet-temporary.jpg",
         alt: "sublet or temp",
         title: "Sublet/Temporary",
+        url: 'https://cincinnati.craigslist.org/search/sub#search=1~gallery~0~0'
       },
       {
         image: "/assets/img/unsplash/housing-vacation-rentals.jpg",
         alt: "vacation rentals",
         title: "Vacation Rentals",
+        url: 'https://cincinnati.craigslist.org/search/vac#search=1~gallery~0~0'
       },
     ],
   },
