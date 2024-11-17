@@ -1,6 +1,7 @@
 <!-- src/components/Navigation.svelte -->
 
 <script>
+
   import LocationModal from './location.svelte';
   import NewList from './newList.svelte';
   import Signin from './signin.svelte';
@@ -12,19 +13,26 @@
   function toggleLocationModal() {
     showLocationModal = !showLocationModal;
   }
-  // function handleKeydown(event) {
-  //   if (event.key === 'Enter') {
-  //     toggleLocationModal();
-  //   }
-  // }
 
   function toggleNewListingModal() {
     showNewListModal = !showNewListModal;
   }
 
   function toggleSigninModal() {
-      showSigninModal = !showSigninModal;
+    showSigninModal = !showSigninModal;
+  }
+
+  // Scroll adjustment for fixed navbar
+  function handleTabClick(event) {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const offset = 80; // Adjust this value to match your navbar height
+      const targetPosition = targetElement.offsetTop - offset;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
     }
+  }
 </script>
 
 <style>
