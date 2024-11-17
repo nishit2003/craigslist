@@ -30,6 +30,7 @@
     z-index: 2000;
     animation: fadeIn 0.3s ease-in-out;
     color: #4e1e86;
+    background-color: #E7EAEE;
   }
 
   .modal-content {
@@ -118,7 +119,7 @@
   }
 </style>
 
-{#if showModal}
+<!-- {#if showModal}
   <div class="modal-background" on:click={handleModalClose}>
     <div class="modal-content">
       <button class="close-button" on:click={onClose}>&times;</button>
@@ -149,4 +150,41 @@
       </form>
     </div>
   </div>
+{/if} -->
+
+
+{#if showModal}
+  <div class="modal-background" role="button" tabindex="0" on:click={handleModalClose} on:keydown={(e) => { if (e.key === 'Enter') handleModalClose(); }}>
+    <div class="modal-content">
+      <button class="close-button" on:click={onClose}>&times;</button>
+      <h2>Create New Listing</h2>
+      <form on:submit|preventDefault={handleSubmit}>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="for-sale">For Sale</option>
+            <option value="housing">Housing</option>
+            <option value="jobs">Jobs</option>
+            <option value="gigs">Gigs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" id="price" placeholder="Enter price" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" rows="4" placeholder="Enter details"></textarea>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
 {/if}
+
+
+

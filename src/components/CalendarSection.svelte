@@ -120,13 +120,13 @@
   }
 
   .calendar-section {
-    background: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     width: 1158px;
     margin: 64px 0;
     padding: 16px 32px;
     color: black;
+    background-color: #E7EAEE;
   }
 
   .calendar-details {
