@@ -1,5 +1,3 @@
-<!-- src/components/Navigation.svelte -->
-
 <script>
 
   import LocationModal from './location.svelte';
@@ -20,6 +18,36 @@
 
   function toggleSigninModal() {
     showSigninModal = !showSigninModal;
+  }
+
+
+  // function scrollToSection(id) {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     const offset = 100; // Adjust this value to your desired offset (e.g., height of sticky navigation)
+  //     const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+  //     const offsetPosition = elementPosition - offset;
+
+  //     window.scrollTo({
+  //       top: offsetPosition,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // }
+
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      const extraSpace = 50; // Additional space above the heading
+      const offset = 100 + extraSpace; // Adjust total offset as needed
+      const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
   }
 
   // Scroll adjustment for fixed navbar
@@ -101,10 +129,11 @@
     padding: 10px 0; /* Reduced padding */
   }
 
-  /* Navigation Menu */
-  .navMenu {
+ /* Navigation Menu */
+.navMenu {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Aligns items vertically */
     list-style: none; /* Remove bullets */
     margin: 0;
     padding: 0;
@@ -118,6 +147,46 @@
     color: #4E1E86;
     cursor: pointer;
   }
+
+  /* ############# */
+  .menu-button {
+  background-color: ghostwhite; /* Light gray background */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding around the button */
+  font-size: 16px; /* Button text size */
+  font-weight: bold; /* Emphasize button text */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  color: #333; /* Dark text color */
+  display: inline-flex; /* Flexbox for inline elements */
+  align-items: center; /* Vertically center text */
+  justify-content: center; /* Horizontally center text */
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+.menu-button:hover {
+  background-color: #4e1e86;
+  color: ghostwhite;
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.menu-button:active {
+  background-color: #d0d0d0; /* Even darker gray when clicked */
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+.menu-button:focus {
+  outline: 2px solid #007bff; /* Blue outline for focus accessibility */
+}
+
+.menuItem {
+  margin: 0; /* Reset margin */
+  display: inline-block; /* Ensure horizontal alignment */
+}
+
+  /* ################# */
+
 
   /* Menu Items */
   .menuItem > a {
@@ -172,7 +241,7 @@
     </div>
 
     <!-- Bottom Navigation -->
-    <div class="bottomNav">
+    <!-- <div class="bottomNav">
       <ul class="navMenu">
         <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}><strong>For Sale</strong></a></li>
         <li class="menuItem"><a href="#housing" on:click={handleTabClick}><strong>Housing</strong></a></li>
@@ -188,7 +257,55 @@
         </li>
       </ul>
     </div>
+  </div> -->
+
+
+  <div class="bottomNav">
+    <ul class="navMenu">
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('for-sale')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('for-sale'); }}>
+          <strong>For Sale</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('housing')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('housing'); }}>
+          <strong>Housing</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('jobs')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('jobs'); }}>
+          <strong>Jobs</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('gigs')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('gigs'); }}>
+          <strong>Gigs</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('services')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('services'); }}>
+          <strong>Services</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('community')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('community'); }}>
+          <strong>Community</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={() => scrollToSection('forum')} on:keydown={(e) => { if (e.key === 'Enter') scrollToSection('forum'); }}>
+          <strong>Discussion Forums</strong>
+        </button>
+      </li>
+      <li class="menuItem">
+        <button class="menu-button" on:click={toggleLocationModal} on:keydown={(e) => { if (e.key === 'Enter') toggleLocationModal(); }}>
+          <strong>Change Location</strong>
+        </button>
+      </li>
+    </ul>
   </div>
+  
+
   <LocationModal showModal={showLocationModal} onClose={toggleLocationModal} />
   <NewList showModal={showNewListModal} onClose={toggleNewListingModal} />
   <Signin showModal={showSigninModal} onClose={toggleSigninModal} />
