@@ -107,20 +107,25 @@
 
   /* Button Styles */
   .btn {
-    font-size: 0.75rem; /* Reduced font size */
-    font-family: 'Fira Code', monospace;
-    font-weight: 300;
-    padding: 0.3em 0.8em; /* Reduced padding */
-    color: white;
-    background: #4E1E86;
-    border-radius: 4px;
-    border: none;
+    font-weight: bold;
+    margin: 8px;
+    font-size: 0.9rem;
+    color: #4E1E86;
     cursor: pointer;
-    transition: background 0.3s;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
   }
 
   .btn:hover {
-    background: purple;
+    font-weight: bold;
+    background-color: #4e1e86;
+    color: ghostwhite;
+    transform: scale(1.05);
   }
 
   /* Bottom Navigation Bar */
