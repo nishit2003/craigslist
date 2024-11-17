@@ -196,7 +196,7 @@
         <li class="menuItem"><a href="#forum" on:click={handleTabClick}><strong>Discussion Forums</strong></a></li>
         <li class="menuItem">
           <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal}>
-            Change Location
+          <strong>Change Location</strong>
           </a>
         </li>
       </ul>
