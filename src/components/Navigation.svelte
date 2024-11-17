@@ -1,15 +1,14 @@
 <!-- src/components/Navigation.svelte -->
 
 <script>
-  // Add any interactivity here if needed
   import LocationModal from './location.svelte';
-
 
   let showLocationModal = false;
 
   function toggleLocationModal() {
     showLocationModal = !showLocationModal;
   }
+
   function handleKeydown(event) {
     if (event.key === 'Enter') {
       toggleLocationModal();
@@ -84,16 +83,11 @@
     font-family: 'Fira Code', monospace;
     cursor: pointer;
     transition: color 0.3s;
+    font-size: 0.9rem; /* Consolidated font size */
   }
 
-  .loginLink:hover .headerP {
+  .loginLink:hover {
     color: purple;
-  }
-
-  .headerP {
-    font-weight: 400;
-    margin: 0;
-    font-size: 0.9rem; /* Reduced font size */
   }
 
   /* Bottom Navigation Bar */
@@ -143,10 +137,6 @@
       text-align: center;
       padding: 0.3em 0.5em; /* Further reduced padding */
     }
-
-    .headerP {
-      font-size: 0.8rem; /* Further reduced font size */
-    }
   }
 </style>
 
@@ -154,19 +144,19 @@
   <div class="navInner">
     <!-- Top Navigation -->
     <div class="topNav">
-      <a href="/" class="active brand">
+      <a href="/" class="brand">
         <img src="/assets/img/logo.svg" alt="Logo">
       </a>
       <div class="leftElements">
-        <a class="loginLink" href="/log-in">
-          <button class="btn">+ listing</button>
+        <a class="btn loginLink" href="/log-in">
+          + listing
         </a>
         <a href="/log-in" class="loginLink" aria-label="Log in or sign up">
-          <p class="headerP">log-in/sign-up</p>
+          log-in/sign-up
         </a>
       </div>
     </div>
-    
+
     <!-- Bottom Navigation -->
     <div class="bottomNav">
       <ul class="navMenu">
@@ -178,8 +168,12 @@
         <li class="menuItem"><a href="#community">community</a></li>
         <li class="menuItem"><a href="#forum">discussion forums</a></li>
         <li class="menuItem">
-          <!-- svelte-ignore a11y-missing-attribute -->
-          <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal} on:keydown={handleKeydown}>
+          <a
+            role="button"
+            tabindex="0"
+            on:click|preventDefault={toggleLocationModal}
+            on:keydown={handleKeydown}
+          >
             change location
           </a>
         </li>
