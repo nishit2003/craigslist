@@ -38,7 +38,7 @@
   function scrollToSection(id) {
     const section = document.getElementById(id);
     if (section) {
-      const extraSpace = 50; // Additional space above the heading
+      const extraSpace = 22; // Additional space above the heading
       const offset = 100 + extraSpace; // Adjust total offset as needed
       const elementPosition = section.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
@@ -141,12 +141,27 @@
   }
 
   .headerP {
-    font-weight: 400;
-    margin: 0;
-    font-size: 0.9rem; /* Reduced font size */
+    font-weight: bold;
+    margin: 8px;
+    font-size: 0.9rem;
     color: #4E1E86;
     cursor: pointer;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
   }
+
+  .headerP:hover {
+    font-weight: bold;
+    background-color: #4e1e86;
+    color: ghostwhite;
+    transform: scale(1.05);
+  }
+
 
   /* ############# */
   .menu-button {
