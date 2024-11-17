@@ -187,15 +187,14 @@
     <!-- Bottom Navigation -->
     <div class="bottomNav">
       <ul class="navMenu">
-        <li class="menuItem"><a href="#for-sale">for sale</a></li>
-        <li class="menuItem"><a href="#housing">housing</a></li>
-        <li class="menuItem"><a href="#jobs">jobs</a></li>
-        <li class="menuItem"><a href="#gigs">gigs</a></li>
-        <li class="menuItem"><a href="#services">services</a></li>
-        <li class="menuItem"><a href="#community">community</a></li>
-        <li class="menuItem"><a href="#forum">discussion forums</a></li>
+        <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}>for sale</a></li>
+        <li class="menuItem"><a href="#housing" on:click={handleTabClick}>housing</a></li>
+        <li class="menuItem"><a href="#jobs" on:click={handleTabClick}>jobs</a></li>
+        <li class="menuItem"><a href="#gigs" on:click={handleTabClick}>gigs</a></li>
+        <li class="menuItem"><a href="#services" on:click={handleTabClick}>services</a></li>
+        <li class="menuItem"><a href="#community" on:click={handleTabClick}>community</a></li>
+        <li class="menuItem"><a href="#forum" on:click={handleTabClick}>discussion forums</a></li>
         <li class="menuItem">
-          <!-- svelte-ignore a11y-missing-attribute -->
           <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal}>
             change location
           </a>
