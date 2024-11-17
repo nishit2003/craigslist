@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import Flickity from "flickity";
   import "flickity/dist/flickity.min.css";
@@ -6,9 +6,19 @@
 
   let selectedDate = null;
   let randomEvent = null; // Store a single random event here
-  let flkty;
+  let flkty: any;
+  let activeImage = 0;
 
-  // Sample events list with dynamic venue and time generation
+  // Correct image imports to ensure the files are bundled properly
+  import concertImg from "/assets/img/unsplash/concert.jpg";
+  import thriftingImg from "/assets/img/unsplash/thrifting.jpg";
+
+  const carouselImages = [
+    { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium"  , Desc: "Enjoy a evening of hip-hop and pop music", Date: "Novermber 24" },
+    { src: thriftingImg, title: "Thrift Shop", Venue: "Panera Bread Backyard", Desc: "Amazing Deals Await" , Date: "Novermber 25"},
+    { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium", Desc: "Enjoy a evening of old-melody music" , Date: "Novermber 25"},
+  ];
+
   const events = [
     { title: "Live Concert", description: "An evening of live music and entertainment." },
     { title: "Food Festival", description: "Taste dishes from around the world." },
@@ -28,12 +38,17 @@
       contain: true,
     });
 
+    // Listen for Flickity's select event
+    (flkty as any).on("select", () => {
+      activeImage = flkty.selectedIndex; // Update activeImage based on selected cell
+      console.log("Active Image Index:", activeImage);
+    });
+
     return () => {
       flkty.destroy();
     };
   });
 
-  // Function to generate dynamic venue and time for an event
   function addDynamicDetails(event) {
     event.venue = `Venue ${Math.floor(Math.random() * 100)}`; // Generate random venue
     const hour = Math.floor(Math.random() * 12) + 1; // Random hour
@@ -43,13 +58,11 @@
     return event;
   }
 
-  // Function to pick a single random event
   function getRandomEvent() {
     const randomIndex = Math.floor(Math.random() * events.length);
     return addDynamicDetails({ ...events[randomIndex] }); // Add dynamic details to the random event
   }
 
-  // Reactive block to monitor selectedDate changes
   $: if (selectedDate) {
     console.log("Selected Date Updated:", selectedDate);
     randomEvent = getRandomEvent(); // Update random event whenever the date changes
@@ -84,27 +97,23 @@
     <div class="rightDetails">
       <h2>Upcoming Events:</h2>
       <div class="main-carousel">
-        <div class="carousel-cell">
-          <img class="gallery-img" src="/assets/img/unsplash/concert.jpg" alt="concert" />
-        </div>
-        <div class="carousel-cell">
-          <img class="gallery-img" src="/assets/img/unsplash/thrifting.jpg" alt="thrifting" />
-        </div>
-        <div class="carousel-cell">
-          <img class="gallery-img" src="/assets/img/unsplash/concert.jpg" alt="concert" />
-        </div>
+        {#each carouselImages as image, index}
+          <div class="carousel-cell">
+            <img class="gallery-img" src={image.src} alt={image.title} />
+          </div>
+        {/each}
       </div>
-      <h3 class="event-details">Live Concert @Probasco Auditorium</h3>
-      <h3 class="event-subdetails">
-        Enjoy an evening of live music and entertainment. Starts at 8 PM on Dec
-        14th.
-      </h3>
+      <!-- Dynamic Text Based on Active Image -->
+      <h2 class="event-title">{carouselImages[activeImage].title}</h2>
+      <h3 class="event-details">{carouselImages[activeImage].Desc}</h3>
+      <h3 class="event-subdetails">{carouselImages[activeImage].Venue}</h3>
+      <h3 class="event-subdetails">{carouselImages[activeImage].Date}</h3>
+
     </div>
   </div>
 </section>
 
 <style>
-  /* Styling for the section and components */
   h3 {
     color: black;
   }
@@ -116,7 +125,9 @@
     width: 1158px;
     margin: 64px 0;
     padding: 16px 32px;
+    color: black;
   }
+
   .calendar-details {
     display: flex;
     flex-direction: row;
@@ -124,14 +135,12 @@
     justify-content: space-between;
     gap: 32px;
   }
+
   .left-details,
   .rightDetails {
     flex: 1;
   }
-  .datepicker-container {
-    width: 100%;
-    color: black;
-  }
+
   .random-event {
     background: #f9f9f9;
     padding: 1rem;
@@ -139,13 +148,53 @@
     margin-top: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   }
+
   .random-event h3 {
     color: #4e1e86;
     margin: 0;
     margin-bottom: 0.5rem;
   }
+
   .random-event p {
     margin: 0.2rem 0;
     color: #555;
+  }
+
+  .main-carousel {
+    width: 600px;
+    height: 259px;
+    box-shadow: 0px 6px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 46px;
+
+  }
+
+  .carousel-cell {
+    margin-right: 30px;
+    overflow: hidden;
+    height: 259px;
+    border-radius: 5px;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-details {
+    font-weight: 500;
+    margin-top: 21px;
+  }
+
+  .event-subdetails {
+    margin: 0px;
+  }
+
+  .event-title{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    font-style: normal;
+    font-size: large;
   }
 </style>
