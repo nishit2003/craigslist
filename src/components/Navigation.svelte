@@ -95,20 +95,6 @@
     background: purple;
   }
 
-  /* Login/Sign-Up Link Styles */
-  .loginLink {
-    text-decoration: none;
-    color: black;
-    font-family: 'Fira Code', monospace;
-    cursor: pointer;
-    transition: color 0.3s;
-    font-size: 0.9rem; /* Consolidated font size */
-  }
-
-  .loginLink:hover {
-    color: purple;
-  }
-
   /* Bottom Navigation Bar */
   .bottomNav {
     background-color: #E7EAEE; /* Match the footer's background color */
