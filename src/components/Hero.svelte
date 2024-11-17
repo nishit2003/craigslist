@@ -26,6 +26,11 @@
     padding: 30px;
   }
 
+  .h3-class {
+    color: #4e1e86;
+    font-weight: bold;
+  }
+
   .hero-details {
     text-align: left;
     color: white;
@@ -36,10 +41,9 @@
     width: 70vh;
   }
 
-  .heroTitle {
-    margin-top: 0;
-    margin-bottom: 16px;
-    font-size: 2rem;
+  .new-class {
+    color: #4e1e86;
+    font-weight: bold;
   }
 
   .searchBar {
@@ -61,6 +65,14 @@
     border-radius: 4px;
     border: none;
     transition: background 0.3s;
+  }
+
+  .cincinnati-class {
+    color: #4e1e86;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 2rem;
   }
 
   button.searchBtn:hover {
@@ -130,8 +142,8 @@
 
 <section class="hero-container">
   <div class="hero-details">
-    <h1 class="heroTitle">Cincinnati, Ohio</h1>
-    <h3>What are you looking for?</h3>
+    <h1 class="cincinnati-class">Cincinnati, Ohio</h1>
+    <h3 class="new-class">What are you looking for?</h3>
     <div class="searchBar">
       <input
         class="searchInput"
@@ -143,7 +155,7 @@
         <img class="searchIcon" src="/assets/img/search-icon.svg" alt="Search">
       </button>
     </div>
-    <h3>Popular searches:</h3>
+    <h3 class="h3-class">Popular searches:</h3>
     <div class="filterRow">
       {#each filters.slice(1) as filter} <!-- Exclude 'All' if not needed -->
         <button class="filterButton" on:click={() => selectedFilter = filter}>
