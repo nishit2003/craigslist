@@ -187,13 +187,13 @@
     <!-- Bottom Navigation -->
     <div class="bottomNav">
       <ul class="navMenu">
-        <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}>For Sale</a></li>
-        <li class="menuItem"><a href="#housing" on:click={handleTabClick}>Housing</a></li>
-        <li class="menuItem"><a href="#jobs" on:click={handleTabClick}>Jobs</a></li>
-        <li class="menuItem"><a href="#gigs" on:click={handleTabClick}>Gigs</a></li>
-        <li class="menuItem"><a href="#services" on:click={handleTabClick}>Services</a></li>
-        <li class="menuItem"><a href="#community" on:click={handleTabClick}>Community</a></li>
-        <li class="menuItem"><a href="#forum" on:click={handleTabClick}>Discussion Forums</a></li>
+        <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}><strong>For Sale</strong></a></li>
+        <li class="menuItem"><a href="#housing" on:click={handleTabClick}><strong>Housing</strong></a></li>
+        <li class="menuItem"><a href="#jobs" on:click={handleTabClick}><strong>Jobs</strong></a></li>
+        <li class="menuItem"><a href="#gigs" on:click={handleTabClick}><strong>Gigs</strong></a></li>
+        <li class="menuItem"><a href="#services" on:click={handleTabClick}><strong>Services</strong></a></li>
+        <li class="menuItem"><a href="#community" on:click={handleTabClick}><strong>Community</strong></a></li>
+        <li class="menuItem"><a href="#forum" on:click={handleTabClick}><strong>Discussion Forums</strong></a></li>
         <li class="menuItem">
           <a role="button" tabindex="0" on:click|preventDefault={toggleLocationModal}>
             Change Location
