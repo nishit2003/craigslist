@@ -1,7 +1,6 @@
 <!-- src/components/Navigation.svelte -->
 
 <script>
-  // Add any interactivity here if needed
   import LocationModal from './location.svelte';
   import NewList from './newList.svelte';
   import Signin from './signin.svelte';
@@ -95,16 +94,11 @@
     font-family: 'Fira Code', monospace;
     cursor: pointer;
     transition: color 0.3s;
+    font-size: 0.9rem; /* Consolidated font size */
   }
 
-  .loginLink:hover .headerP {
+  .loginLink:hover {
     color: purple;
-  }
-
-  .headerP {
-    font-weight: 400;
-    margin: 0;
-    font-size: 0.9rem; /* Reduced font size */
   }
 
   /* Bottom Navigation Bar */
@@ -162,10 +156,6 @@
       text-align: center;
       padding: 0.3em 0.5em; /* Further reduced padding */
     }
-
-    .headerP {
-      font-size: 0.8rem; /* Further reduced font size */
-    }
   }
 </style>
 
@@ -173,7 +163,7 @@
   <div class="navInner">
     <!-- Top Navigation -->
     <div class="topNav">
-      <a href="/" class="active brand">
+      <a href="/" class="brand">
         <img src="/assets/img/logo.svg" alt="Logo">
       </a>
       <div class="leftElements">
@@ -185,7 +175,7 @@
         
       </div>
     </div>
-    
+
     <!-- Bottom Navigation -->
     <div class="bottomNav">
       <ul class="navMenu">
