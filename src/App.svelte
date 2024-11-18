@@ -15,6 +15,7 @@
 </script>
 
 <style>
+  
   /* Import Flickity CSS globally */
   @import 'flickity/dist/flickity.min.css';
 
