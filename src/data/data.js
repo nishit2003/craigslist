@@ -212,7 +212,7 @@ export const categoriesData = {
         alt: "crew",
         title: "Crew",
         description: "Find crew-related opportunities.",
-        url: "https://cincinnati.craigslist.org/search/evg",
+        url: "https://cincinnati.craigslist.org/search/cwg",
       },
       {
         image: "/assets/img/unsplash/gigs-domestic.jpg",
