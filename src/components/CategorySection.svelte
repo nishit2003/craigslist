@@ -24,7 +24,7 @@
   /* Container for the entire category section */
   .category-section {
     width: 100%;
-    padding: 32px 16px;
+    padding: 8px 8px;
     box-sizing: border-box;
     background-color: #f9f9f9; /* Optional: Background color for the section */
   }
