@@ -172,7 +172,7 @@ export const categoriesData = {
         alt: "technology",
         title: "Technology",
         description: "Find jobs in the tech industry.",
-        url: "https://cincinnati.craigslist.org/search/tch",
+        url: "https://cincinnati.craigslist.org/search/sof",
       },
       {
         image: "/assets/img/unsplash/jobs-hospitality.jpg",
