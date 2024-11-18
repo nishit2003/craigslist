@@ -1,13 +1,14 @@
-<script lang="ts">
+<script >
   import { onMount } from "svelte";
   import Flickity from "flickity";
   import "flickity/dist/flickity.min.css";
   import { Datepicker, P } from "flowbite-svelte";
-  import EventModal from "./EventModal.svelte"; // Import EventModal component
+  // import EventModal from "./EventModal.svelte"; // Import EventModal component
 
   let selectedDate = null;
   let randomEvent = null; // Store a single random event here
-  let flkty: any;
+  // let flkty= any;
+  let flkty = null;
   let activeImage = 0;
 
   // Correct image imports to ensure the files are bundled properly
@@ -41,7 +42,7 @@
     });
 
     // Listen for Flickity's select event
-    (flkty as any).on("select", () => {
+    flkty.on("select", () => {
       activeImage = flkty.selectedIndex; // Update activeImage based on selected cell
       console.log("Active Image Index:", activeImage);
     });
