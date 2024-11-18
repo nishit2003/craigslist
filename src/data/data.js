@@ -1,4 +1,5 @@
 export const categoriesData = {
+  // "For Sale" category with subcategories.
   "for-sale": {
     title: "for sale",
     categories: [
@@ -53,6 +54,8 @@ export const categoriesData = {
       },
     ],
   },
+
+  // "Housing" category with subcategories.
   housing: {
     title: "housing",
     categories: [
