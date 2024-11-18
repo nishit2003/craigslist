@@ -4,6 +4,7 @@
 
   function closeModal() {
     isOpen = false;
+   location.reload();
   }
 </script>
 

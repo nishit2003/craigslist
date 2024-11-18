@@ -61,6 +61,7 @@
 
   function closeModal() {
     isOpen = false; // Close the modal
+    location.reload(); // Reload the page to reset the search
   }
 </script>
 
