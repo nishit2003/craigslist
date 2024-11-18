@@ -1,16 +1,36 @@
-<!-- src/components/LocationModal.svelte -->
-<script>
-	
+
+ <script>
   export let showModal = false;
   export let onClose;
 
+  let locationInput = ""; // To capture the user's input
+  let errorMessage = ""; // To display the error message
+
+  // List of Cincinnati ZIP codes
+  const cincinnatiZipCodes = Array.from({ length: 99 }, (_, i) => `452${String(i + 1).padStart(2, '0')}`);
+
   function closeModal() {
     onClose(); // Call the function to close the modal in the parent component
+    resetInputs(); // Reset input fields and error messages
+  }
+
+  function resetInputs() {
+    locationInput = ""; // Clear the input field
+    errorMessage = ""; // Clear the error message
   }
 
   function handleSubmit() {
-    // Perform any actions with the input value if needed
-    closeModal();
+    const userInput = locationInput.trim().toLowerCase();
+
+    // Check if input matches "Cincinnati" or a valid Cincinnati ZIP code
+    if (userInput === "cincinnati" || cincinnatiZipCodes.includes(locationInput.trim())) {
+      closeModal(); // Close the modal if the input is valid
+    } else {
+      // Show an error message for other inputs and keep the modal open
+      // errorMessage = `Oops! We are currently focused on "Cincinnati, Ohio" only. Soon, you will be able to use it for "${locationInput}".`;
+      errorMessage = `Hang tight! This feature is currently exclusive to "Cincinnati, Ohio" only. "${locationInput}" is on our radar!`;
+      locationInput = ""; // Clear the input field for retry
+    }
   }
 </script>
 
@@ -59,7 +79,7 @@
     border-radius: 4px;
     font-size: 1rem;
     margin-bottom: 1rem;
-    color:black;
+    color: black;
   }
 
   .submitButton {
@@ -89,6 +109,12 @@
   .closeButton:hover {
     color: #555;
   }
+
+  .errorMessage {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
 </style>
 
 {#if showModal}
@@ -96,9 +122,17 @@
     <div class="modalContent" on:click|stopPropagation>
       <h2>Enter your location</h2>
       <p>Please enter your zip code or city:</p>
-      <input type="text" placeholder="Zip code or city" class="locationInput" />
+      <input
+        type="text"
+        placeholder="Zip code or city"
+        class="locationInput"
+        bind:value={locationInput}
+      />
       <button class="submitButton" on:click={handleSubmit}>Submit</button>
       <button class="closeButton" on:click={closeModal}>Close</button>
+      {#if errorMessage}
+        <div class="errorMessage">{errorMessage}</div>
+      {/if}
     </div>
   </div>
 {/if}

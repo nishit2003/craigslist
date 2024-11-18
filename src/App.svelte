@@ -1,5 +1,3 @@
-<!-- src/App.svelte -->
-
 <script>
   import "./app.css";
   import Navigation from './components/Navigation.svelte';
@@ -17,6 +15,7 @@
 </script>
 
 <style>
+  
   /* Import Flickity CSS globally */
   @import 'flickity/dist/flickity.min.css';
 
