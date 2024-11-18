@@ -194,6 +194,8 @@ export const categoriesData = {
       },
     ],
   },
+
+  // "Gigs" category with subcategories.
   gigs: {
     title: "gigs",
     categories: [
