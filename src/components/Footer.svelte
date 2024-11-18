@@ -88,7 +88,7 @@
     <!-- Footer App Downloads -->
     <div class="footerTextContainer">
       <h5 class="footerLink">Download App:</h5>
-      <a href="https://play.google.com/store/apps/details?id=org.craigslist.CraigslistMobile&hl=en_US&pli=1">
+      <a href="https://play.google.com/store/apps/details?id=org.craigslist.CraigslistMobile&hl=en_US&pli=1" target="_blank" class="footerApps">
         <img class="footerApps" src="/assets/img/apps.svg" alt="Apps">
       </a>
     </div>
