@@ -13,9 +13,10 @@
   // Correct image imports to ensure the files are bundled properly
   import concertImg from "/assets/img/unsplash/concert.jpg";
   import thriftingImg from "/assets/img/unsplash/thrifting.jpg";
+  import concert2Img from "/assets/img/unsplash/concert2.jfif";
 
   const carouselImages = [
-    { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium"  , Desc: "Enjoy a evening of hip-hop and pop music", Date: "Novermber 24" },
+    { src: concert2Img, title: "Live Concert", Venue: "@Probasco Auditorium"  , Desc: "Enjoy a evening of hip-hop and pop music", Date: "Novermber 24" },
     { src: thriftingImg, title: "Thrift Shop", Venue: "Panera Bread Backyard", Desc: "Amazing Deals Await" , Date: "Novermber 25"},
     { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium", Desc: "Enjoy a evening of old-melody music" , Date: "Novermber 26"},
   ];
