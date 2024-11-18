@@ -131,7 +131,8 @@ export const categoriesData = {
       },
     ],
   },
-  // Include similar formatting for "jobs", "gigs", "services", "community", and "forum".
+  
+  // "Jobs" category with subcategories.
   jobs: {
     title: "jobs",
     categories: [
