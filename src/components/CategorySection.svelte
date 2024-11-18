@@ -90,8 +90,7 @@
 
   /* Description styling */
   .card-description {
-    text-align: center;
-    font-size: 14px;
+    font-size: 9px;
     color: #555;
   }
 
@@ -113,19 +112,13 @@
     }
   }
 
-  @media (max-width: 1200px) {
-    .carousel-container {
-      max-width: 1200px; /* Further adjustment */
-    }
-  }
-
   @media (max-width: 768px) {
     .carousel-container {
       width: 100%;
     }
 
     .carousel-cell {
-      width: 200px;
+      width: 100px;
     }
 
     .carousel-cell img {
