@@ -21,20 +21,6 @@
   }
 
 
-  // function scrollToSection(id) {
-  //   const section = document.getElementById(id);
-  //   if (section) {
-  //     const offset = 100; // Adjust this value to your desired offset (e.g., height of sticky navigation)
-  //     const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-  //     const offsetPosition = elementPosition - offset;
-
-  //     window.scrollTo({
-  //       top: offsetPosition,
-  //       behavior: 'smooth',
-  //     });
-  //   }
-  // }
-
   function scrollToSection(id) {
     const section = document.getElementById(id);
     if (section) {
