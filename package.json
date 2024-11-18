@@ -21,6 +21,7 @@
   "dependencies": {
     "@ampproject/remapping": "^2.3.0",
     "craigslist": "file:",
+    "esbuild": "^0.24.0",
     "flickity": "^3.0.0",
     "svelte-flickity": "^1.1.3"
   }

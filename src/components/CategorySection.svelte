@@ -1,6 +1,7 @@
 <!-- src/components/CategorySection.svelte -->
 
 <script>
+	// import { color } from './../../node_modules/flowbite-svelte/dist/badge/Badge.svelte.d.ts';
   import Carousel from 'svelte-flickity';
 
   export let id = '';
@@ -50,7 +51,7 @@
   /* Individual carousel cells */
   .carousel-cell {
     width: 270px;
-    height: 210px;
+    height: 250px;
     margin-right: 20px;
     margin-bottom: 10px;
     background: white;
@@ -59,8 +60,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     transition: transform 0.3s;
+    padding: 10px;
   }
 
   .carousel-cell:hover {
@@ -78,11 +80,19 @@
   /* Titles within carousel cells */
   .card-title {
     text-align: center;
-    margin: 0;
-    padding: 8px 0;
+    margin: 8px 0 4px;
+    padding: 0;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: capitalize;
+    color : #4E1E86;
+  }
+
+  /* Description styling */
+  .card-description {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
   }
 
   /* Link Styles */
@@ -134,12 +144,14 @@
             <div class="carousel-cell">
               <img src="{category.image}" alt="{category.alt}" loading="lazy" />
               <h3 class="card-title">{category.title}</h3>
+              <p class="card-description">{category.description}</p>
             </div>
           </a>
         {:else}
           <div class="carousel-cell">
             <img src="{category.image}" alt="{category.alt}" loading="lazy" />
             <h3 class="card-title">{category.title}</h3>
+            <p class="card-description">{category.description}</p>
           </div>
         {/if}
       {/each}
