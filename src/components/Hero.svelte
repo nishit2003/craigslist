@@ -1,6 +1,9 @@
 <script>
-  let searchQuery = '';
-  let selectedFilter = 'All';
+  import SearchModal from "./SearchModal.svelte";
+
+  let searchQuery = ""; // User input for search
+  let modalOpen = false; // Controls modal visibility
+  let selectedFilter = "All"; // Default filter
 
   const filters = ['All', 'Cars', 'Jobs', 'Housing', 'Services', 'Items for Sale'];
 
@@ -20,11 +23,63 @@
     const url = `https://cincinnati.craigslist.org/search/${path}${queryParam}${hash}`;
     window.open(url, "_blank");
   }
+
+  function handleSearch() {
+    if (searchQuery.trim()) {
+      modalOpen = true; // Open the modal
+    }
+  }
+
+  function closeModal() {
+    modalOpen = false; // Close the modal
+  }
 </script>
+
+<section class="hero-container">
+  <div class="hero-details">
+    <h1 class="cincinnati-class">Cincinnati, Ohio</h1>
+    <h3 class="new-class">What are you looking for?</h3>
+    <div class="searchBar">
+      <input
+        class="searchInput"
+        type="text"
+        placeholder="Keywords"
+        bind:value={searchQuery}
+      />
+      <button class="searchBtn" on:click={handleSearch}>
+        <img class="searchIcon" src="/assets/img/search-icon.svg" alt="Search" />
+      </button>
+    </div>
+    <h3 class="h3-class">Popular searches:</h3>
+    <div class="filterRow">
+      {#each filters as filter}
+        <button
+          class="filterButton"
+          on:click={() => {
+            selectedFilter = filter;
+            navigateToCraigslist(filter);
+          }}
+        >
+          {filter}
+        </button>
+      {/each}
+    </div>
+  </div>
+
+  <!-- Include the modal -->
+  <SearchModal
+    isOpen={modalOpen}
+    query={searchQuery}
+    filter={selectedFilter}
+    on:close={closeModal}
+  />
+</section>
+
 
 <style>
   .hero-container {
-    background-image: linear-gradient(to right, rgba(176,142,215, 0.6), rgba(129,160,223, 0.6)), url('/assets/img/heroImage.svg');
+    background-image: linear-gradient(to right, rgba(176, 142, 215, 0.6), rgba(129, 160, 223, 0.6)),
+      url("/assets/img/heroImage.svg");
     height: 40vh;
     margin-top: 90px;
     background-position: center;
@@ -71,7 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #4E1E86;
+    background: #4e1e86;
     color: white;
     border-radius: 4px;
     border: none;
@@ -102,7 +157,7 @@
     border: none;
     padding-left: 10px;
     outline: none;
-    font-family: 'Fira Code', monospace;
+    font-family: "Fira Code", monospace;
     border-radius: 4px 0 0 4px;
   }
 
@@ -115,19 +170,19 @@
   }
 
   .filterButton {
-    font-family: 'Fira Code', monospace;
+    font-family: "Fira Code", monospace;
     border-radius: 100px;
     padding: 4px 12px;
     cursor: pointer;
     transition: box-shadow 0.3s, background 0.3s, color 0.3s;
     background: #fff;
-    color: #4E1E86;
-    border: 1px solid #4E1E86;
+    color: #4e1e86;
+    border: 1px solid #4e1e86;
   }
 
   .filterButton:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-    background: #4E1E86;
+    background: #4e1e86;
     color: white;
   }
 
@@ -151,7 +206,7 @@
   }
 </style>
 
-<section class="hero-container">
+<!-- <section class="hero-container">
   <div class="hero-details">
     <h1 class="cincinnati-class">Cincinnati, Ohio</h1>
     <h3 class="new-class">What are you looking for?</h3>
@@ -162,14 +217,14 @@
         placeholder="Keywords"
         bind:value={searchQuery}
       />
-      <button class="searchBtn" on:click={() => navigateToCraigslist(selectedFilter)}>
-        <img class="searchIcon" src="/assets/img/search-icon.svg" alt="Search">
+      <button class="searchBtn" on:click={handleSearch}>
+        <img class="searchIcon" src="/assets/img/search-icon.svg" alt="Search" />
       </button>
     </div>
     <h3 class="h3-class">Popular searches:</h3>
     <div class="filterRow">
       {#each filters.slice(1) as filter} <!-- Exclude 'All' if not needed -->
-        <button
+        <!-- <button
           class="filterButton"
           on:click={() => navigateToCraigslist(filter)}
         >
@@ -178,4 +233,7 @@
       {/each}
     </div>
   </div>
-</section>
+
+   Include the modal -->
+  <!-- <SearchModal isOpen={modalOpen} searchQuery={searchQuery} on:close={closeModal} /> -->
+<!-- </section> --> 
