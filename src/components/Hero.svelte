@@ -1,14 +1,24 @@
-<!-- src/components/Hero.svelte -->
-
 <script>
   let searchQuery = '';
   let selectedFilter = 'All';
-  
+
   const filters = ['All', 'Cars', 'Jobs', 'Housing', 'Services', 'Items for Sale'];
 
-  function handleSearch() {
-    console.log('Searching for:', selectedFilter, searchQuery);
-    // Implement search functionality here
+  const craigslistPaths = {
+    All: "sss", // General search
+    Cars: "cta",
+    Jobs: "jjj",
+    Housing: "hhh",
+    Services: "bbb",
+    "Items for Sale": "sss",
+  };
+
+  function navigateToCraigslist(filter) {
+    const path = craigslistPaths[filter];
+    const queryParam = searchQuery ? `?query=${encodeURIComponent(searchQuery)}` : '';
+    const hash = '#search=1~gallery~0~0';
+    const url = `https://cincinnati.craigslist.org/search/${path}${queryParam}${hash}`;
+    window.open(url, "_blank");
   }
 </script>
 
@@ -34,7 +44,7 @@
   .hero-details {
     text-align: left;
     color: white;
-    font-weight: lighter; 
+    font-weight: lighter;
     display: flex;
     flex-direction: column;
     filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.1));
@@ -51,6 +61,7 @@
     gap: 0;
     position: relative;
     width: 100%;
+    color: #4e1e86;
   }
 
   button.searchBtn {
@@ -106,7 +117,7 @@
   .filterButton {
     font-family: 'Fira Code', monospace;
     border-radius: 100px;
-    padding: 4px 12px;  
+    padding: 4px 12px;
     cursor: pointer;
     transition: box-shadow 0.3s, background 0.3s, color 0.3s;
     background: #fff;
@@ -151,14 +162,17 @@
         placeholder="Keywords"
         bind:value={searchQuery}
       />
-      <button class="searchBtn" on:click={handleSearch}>
+      <button class="searchBtn" on:click={() => navigateToCraigslist(selectedFilter)}>
         <img class="searchIcon" src="/assets/img/search-icon.svg" alt="Search">
       </button>
     </div>
     <h3 class="h3-class">Popular searches:</h3>
     <div class="filterRow">
       {#each filters.slice(1) as filter} <!-- Exclude 'All' if not needed -->
-        <button class="filterButton" on:click={() => selectedFilter = filter}>
+        <button
+          class="filterButton"
+          on:click={() => navigateToCraigslist(filter)}
+        >
           {filter}
         </button>
       {/each}
