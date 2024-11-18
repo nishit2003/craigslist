@@ -3,7 +3,6 @@
   import Flickity from "flickity";
   import "flickity/dist/flickity.min.css";
   import { Datepicker, P } from "flowbite-svelte";
-  // import EventModal from "./EventModal.svelte"; // Import EventModal component
 
   let selectedDate = null;
   let randomEvent = null; // Store a single random event here
