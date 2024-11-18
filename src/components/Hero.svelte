@@ -206,34 +206,4 @@
   }
 </style>
 
-<!-- <section class="hero-container">
-  <div class="hero-details">
-    <h1 class="cincinnati-class">Cincinnati, Ohio</h1>
-    <h3 class="new-class">What are you looking for?</h3>
-    <div class="searchBar">
-      <input
-        class="searchInput"
-        type="text"
-        placeholder="Keywords"
-        bind:value={searchQuery}
-      />
-      <button class="searchBtn" on:click={handleSearch}>
-        <img class="searchIcon" src="/assets/img/search-icon.svg" alt="Search" />
-      </button>
-    </div>
-    <h3 class="h3-class">Popular searches:</h3>
-    <div class="filterRow">
-      {#each filters.slice(1) as filter} <!-- Exclude 'All' if not needed -->
-        <!-- <button
-          class="filterButton"
-          on:click={() => navigateToCraigslist(filter)}
-        >
-          {filter}
-        </button>
-      {/each}
-    </div>
-  </div>
 
-   Include the modal -->
-  <!-- <SearchModal isOpen={modalOpen} searchQuery={searchQuery} on:close={closeModal} /> -->
-<!-- </section> --> 
