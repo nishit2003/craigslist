@@ -137,7 +137,7 @@ export const categoriesData = {
         alt: "resumes",
         title: "Resumes",
         description: "Post or find resumes for job opportunities.",
-        url: "https://cincinnati.craigslist.org/search/res",
+        url: "https://cincinnati.craigslist.org/search/rrr#search=1~thumb~0~0",
       },
       {
         image: "/assets/img/unsplash/jobs-general.jpg",
@@ -158,21 +158,21 @@ export const categoriesData = {
         alt: "agencies",
         title: "Agencies",
         description: "Find jobs through recruitment agencies.",
-        url: "https://cincinnati.craigslist.org/search/agc",
+        url: "https://cincinnati.craigslist.org/search/ofc",
       },
       {
         image: "/assets/img/unsplash/jobs-creative.jpg",
         alt: "creative",
         title: "Creative",
         description: "Opportunities in arts, design, and more.",
-        url: "https://cincinnati.craigslist.org/search/cre",
+        url: "https://cincinnati.craigslist.org/search/med",
       },
       {
         image: "/assets/img/unsplash/jobs-tech.jpg",
         alt: "technology",
         title: "Technology",
         description: "Find jobs in the tech industry.",
-        url: "https://cincinnati.craigslist.org/search/sof",
+        url: "https://cincinnati.craigslist.org/search/tch",
       },
       {
         image: "/assets/img/unsplash/jobs-hospitality.jpg",
