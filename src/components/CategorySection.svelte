@@ -3,6 +3,7 @@
 <script>
 	// import { color } from './../../node_modules/flowbite-svelte/dist/badge/Badge.svelte.d.ts';
   import Carousel from 'svelte-flickity';
+  import Catmodel from './catmodel.svelte';
 
   export let id = '';
   export let title = '';
@@ -18,6 +19,14 @@
     cellAlign: 'left', // Align cells to the left
     // Add more Flickity options as needed
   };
+
+  let modalOpen = false; // Controls modal visibility
+  let selectedCategory = {}; // The data of the clicked category
+
+  function openModal(category) {
+    selectedCategory = category;
+    modalOpen = true;
+  }
 </script>
 
 <style>
@@ -133,15 +142,15 @@
     <Carousel {options}>
       {#each categories as category}
         {#if category.url}
-          <a href="{category.url}" target="_blank" rel="noopener noreferrer">
-            <div class="carousel-cell">
+          <!-- <a href="{category.url}" target="_blank" rel="noopener noreferrer"> -->
+            <div class="carousel-cell" on:click={() => openModal(category)}>
               <img src="{category.image}" alt="{category.alt}" loading="lazy" />
               <h3 class="card-title">{category.title}</h3>
               <p class="card-description">{category.description}</p>
             </div>
-          </a>
+          <!-- </a> -->
         {:else}
-          <div class="carousel-cell">
+          <div class="carousel-cell" on:click={() => openModal(category)}>
             <img src="{category.image}" alt="{category.alt}" loading="lazy" />
             <h3 class="card-title">{category.title}</h3>
             <p class="card-description">{category.description}</p>
@@ -150,4 +159,5 @@
       {/each}
     </Carousel>
   </div>
+  <Catmodel isOpen={modalOpen} category={selectedCategory} on:close={() => (modalOpen = false)} />
 </div>

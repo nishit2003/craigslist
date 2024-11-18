@@ -9,6 +9,7 @@ export const categoriesData = {
         title: "General",
         description: "Browse various items for sale.",
         url: "https://cincinnati.craigslist.org/search/sss#search=1~gallery~0~0",
+        price: "$100"
       },
       {
         image: "/assets/img/unsplash/forSale-electronics.jpg",
@@ -16,6 +17,7 @@ export const categoriesData = {
         title: "Electronics",
         description: "Find gadgets, phones, and more.",
         url: "https://cincinnati.craigslist.org/search/ela#search=1~gallery~0~0",
+        price: "$50"
       },
       {
         image: "/assets/img/unsplash/forSale-automotive.jpg",
@@ -23,6 +25,7 @@ export const categoriesData = {
         title: "Automotive",
         description: "Vehicles, auto parts, and tools.",
         url: "https://cincinnati.craigslist.org/search/cta#search=1~gallery~0~0",
+        price: "$200"
       },
       {
         image: "/assets/img/unsplash/forSale-entertainment.jpg",
@@ -30,6 +33,7 @@ export const categoriesData = {
         title: "Entertainment",
         description: "Music, movies, and games.",
         url: "https://cincinnati.craigslist.org/search/ema#search=1~gallery~0~0",
+        price: "$20"
       },
       {
         image: "/assets/img/unsplash/forSale-accessories.jpg",
@@ -37,6 +41,7 @@ export const categoriesData = {
         title: "Clothes and Accessories",
         description: "Fashion and accessory items.",
         url: "https://cincinnati.craigslist.org/search/cla#search=1~gallery~0~0",
+        price: "$30"
       },
       {
         image: "/assets/img/unsplash/forSale-supplies.jpg",
@@ -44,6 +49,7 @@ export const categoriesData = {
         title: "Household Supplies",
         description: "Supplies for your home needs.",
         url: "https://cincinnati.craigslist.org/search/hsa#search=1~gallery~0~0",
+        price: "$10"
       },
       {
         image: "/assets/img/unsplash/forSale-heavyEquipment.jpg",
@@ -51,6 +57,7 @@ export const categoriesData = {
         title: "Heavy Equipment",
         description: "Machinery and large tools.",
         url: "https://cincinnati.craigslist.org/search/hva#search=1~gallery~0~0",
+        price: "$500"
       },
     ],
   },
@@ -65,6 +72,7 @@ export const categoriesData = {
         title: "Apts/Housing for rent",
         description: "Search for rental housing options.",
         url: "https://cincinnati.craigslist.org/search/apa#search=1~gallery~0~0",
+        price: "$1000"
       },
       {
         image: "/assets/img/unsplash/housing-housingWanted.jpg",
@@ -72,6 +80,7 @@ export const categoriesData = {
         title: "Housing Wanted",
         description: "Post or find housing needs.",
         url: "https://cincinnati.craigslist.org/search/hou#search=1~gallery~0~0",
+        price: "$3000"
       },
       {
         image: "/assets/img/unsplash/housing-housingSwap.jpg",
@@ -79,6 +88,7 @@ export const categoriesData = {
         title: "Housing Swap",
         description: "Trade housing spaces with others.",
         url: "https://cincinnati.craigslist.org/search/hsw#search=1~gallery~0~0",
+        price: "$2000"
       },
       {
         image: "/assets/img/unsplash/housing-commercial.jpg",
@@ -86,6 +96,7 @@ export const categoriesData = {
         title: "Office/Commercial",
         description: "Explore office spaces and properties.",
         url: "https://cincinnati.craigslist.org/search/off#search=1~gallery~0~0",
+        price: "$5000"
       },
       {
         image: "/assets/img/unsplash/housing-roomsWanted.jpg",
@@ -93,6 +104,7 @@ export const categoriesData = {
         title: "Rooms Wanted",
         description: "Post or search for shared rooms.",
         url: "https://cincinnati.craigslist.org/search/sha#search=1~gallery~0~0",
+        price: "$800"
       },
       {
         image: "/assets/img/unsplash/housing-parking.jpg",
@@ -100,6 +112,7 @@ export const categoriesData = {
         title: "Parking/Storage",
         description: "Find parking spaces or storage units.",
         url: "https://cincinnati.craigslist.org/search/prk#search=1~gallery~0~0",
+        price: "$200"
       },
       {
         image: "/assets/img/unsplash/housing-realEstate.jpg",
@@ -107,6 +120,7 @@ export const categoriesData = {
         title: "Real Estate",
         description: "Buy or sell properties.",
         url: "https://cincinnati.craigslist.org/search/rea#search=1~gallery~0~0",
+        price: "$100000"
       },
       {
         image: "/assets/img/unsplash/housing-rooms-shared.jpg",
@@ -114,6 +128,7 @@ export const categoriesData = {
         title: "Rooms/Shared",
         description: "Search for shared living spaces.",
         url: "https://cincinnati.craigslist.org/search/sha#search=1~gallery~0~0",
+        price: "$500"
       },
       {
         image: "/assets/img/unsplash/housing-sublet-temporary.jpg",
@@ -121,6 +136,7 @@ export const categoriesData = {
         title: "Sublet/Temporary",
         description: "Short-term rentals and sublets.",
         url: "https://cincinnati.craigslist.org/search/sub#search=1~gallery~0~0",
+        price: "$1000"
       },
       {
         image: "/assets/img/unsplash/housing-vacation-rentals.jpg",
@@ -128,6 +144,7 @@ export const categoriesData = {
         title: "Vacation Rentals",
         description: "Book vacation homes or rentals.",
         url: "https://cincinnati.craigslist.org/search/vac#search=1~gallery~0~0",
+        price: "$200"
       },
     ],
   },
@@ -142,6 +159,7 @@ export const categoriesData = {
         title: "Resumes",
         description: "Post or find resumes for job opportunities.",
         url: "https://cincinnati.craigslist.org/search/rrr#search=1~thumb~0~0",
+        price: "$30"
       },
       {
         image: "/assets/img/unsplash/jobs-general.jpg",
@@ -149,6 +167,7 @@ export const categoriesData = {
         title: "General",
         description: "Browse general job openings.",
         url: "https://cincinnati.craigslist.org/search/jjj",
+        price: "$230"
       },
       {
         image: "/assets/img/unsplash/jobs-management.jpg",
@@ -156,6 +175,7 @@ export const categoriesData = {
         title: "Business Management",
         description: "Explore management-level positions.",
         url: "https://cincinnati.craigslist.org/search/bus",
+        price: "$100"
       },
       {
         image: "/assets/img/unsplash/jobs-agencies.jpg",
@@ -163,6 +183,7 @@ export const categoriesData = {
         title: "Agencies",
         description: "Find jobs through recruitment agencies.",
         url: "https://cincinnati.craigslist.org/search/ofc",
+        price: "$50"
       },
       {
         image: "/assets/img/unsplash/jobs-creative.jpg",
@@ -170,6 +191,7 @@ export const categoriesData = {
         title: "Creative",
         description: "Opportunities in arts, design, and more.",
         url: "https://cincinnati.craigslist.org/search/med",
+        price: "$150"
       },
       {
         image: "/assets/img/unsplash/jobs-tech.jpg",
@@ -177,6 +199,7 @@ export const categoriesData = {
         title: "Technology",
         description: "Find jobs in the tech industry.",
         url: "https://cincinnati.craigslist.org/search/sof",
+        price: "$200"
       },
       {
         image: "/assets/img/unsplash/jobs-hospitality.jpg",
@@ -184,6 +207,7 @@ export const categoriesData = {
         title: "Hospitality",
         description: "Careers in hotels, restaurants, and more.",
         url: "https://cincinnati.craigslist.org/search/fbh",
+        price: "$80"
       },
       {
         image: "/assets/img/unsplash/jobs-fitness.jpg",
@@ -191,6 +215,7 @@ export const categoriesData = {
         title: "Fitness & Health",
         description: "Explore jobs in wellness and fitness.",
         url: "https://cincinnati.craigslist.org/search/spa",
+        price: "$120"
       },
     ],
   },
@@ -205,13 +230,16 @@ export const categoriesData = {
         title: "Computer",
         description: "Short-term gigs for computer work.",
         url: "https://cincinnati.craigslist.org/search/cpg",
+        price: "$20"
       },
+
       {
         image: "/assets/img/unsplash/gigs-creative.jpg",
         alt: "creative",
         title: "Creative",
         description: "Creative gigs in design and media.",
         url: "https://cincinnati.craigslist.org/search/crg",
+        price: "$30"
       },
       {
         image: "/assets/img/unsplash/gigs-crew.jpg",
@@ -219,6 +247,7 @@ export const categoriesData = {
         title: "Crew",
         description: "Find crew-related opportunities.",
         url: "https://cincinnati.craigslist.org/search/cwg",
+        price: "$40"
       },
       {
         image: "/assets/img/unsplash/gigs-domestic.jpg",
@@ -226,6 +255,7 @@ export const categoriesData = {
         title: "Domestic",
         description: "Household and domestic gigs.",
         url: "https://cincinnati.craigslist.org/search/dmg",
+        price: "$50"
       },
       {
         image: "/assets/img/unsplash/gigs-event.jpg",
@@ -233,6 +263,7 @@ export const categoriesData = {
         title: "Event",
         description: "Event-specific short-term gigs.",
         url: "https://cincinnati.craigslist.org/search/evg",
+        price: "$60"
       },
       {
         image: "/assets/img/unsplash/gigs-labor.jpg",
@@ -240,6 +271,7 @@ export const categoriesData = {
         title: "Labor",
         description: "Manual labor and related gigs.",
         url: "https://cincinnati.craigslist.org/search/lbg",
+        price: "$70"
       },
       {
         image: "/assets/img/unsplash/gigs-talent.jpg",
@@ -247,6 +279,7 @@ export const categoriesData = {
         title: "Talent",
         description: "Modeling, acting, and talent gigs.",
         url: "https://cincinnati.craigslist.org/search/tlg",
+        price: "$80"
       },
       {
         image: "/assets/img/unsplash/gigs-writing.jpg",
@@ -254,6 +287,7 @@ export const categoriesData = {
         title: "Writing",
         description: "Short-term writing and editing gigs.",
         url: "https://cincinnati.craigslist.org/search/wrg",
+        price: "$90"
       },
     ],
   },
@@ -268,6 +302,7 @@ export const categoriesData = {
         title: "Tech",
         description: "Technology-related services.",
         url: "https://cincinnati.craigslist.org/search/cps",
+        price: "$100"
       },
       {
         image: "/assets/img/unsplash/services-health.jpg",
@@ -275,6 +310,7 @@ export const categoriesData = {
         title: "Health & Wellness",
         description: "Health and wellness services.",
         url: "https://cincinnati.craigslist.org/search/hws",
+        price: "$110"
       },
       {
         image: "/assets/img/unsplash/services-household.jpg",
@@ -282,6 +318,7 @@ export const categoriesData = {
         title: "General Household",
         description: "Services for home maintenance.",
         url: "https://cincinnati.craigslist.org/search/hss",
+        price: "$120"
       },
       {
         image: "/assets/img/unsplash/services-professional.jpg",
@@ -289,6 +326,7 @@ export const categoriesData = {
         title: "Professional",
         description: "Legal, financial, and other professional services.",
         url: "https://cincinnati.craigslist.org/search/lgs",
+        price: "$130"
       },
       {
         image: "/assets/img/unsplash/services-creative.jpg",
@@ -296,6 +334,7 @@ export const categoriesData = {
         title: "Creative",
         description: "Creative and artistic services.",
         url: "https://cincinnati.craigslist.org/search/crs",
+        price: "$140"
       },
       {
         image: "/assets/img/unsplash/services-animals.jpg",
@@ -303,6 +342,7 @@ export const categoriesData = {
         title: "Animals",
         description: "Pet-related services.",
         url: "https://cincinnati.craigslist.org/search/pas",
+        price: "$150"
       },
     ],
   },
@@ -317,6 +357,7 @@ export const categoriesData = {
         title: "Lost & Found",
         description: "Items lost or found locally.",
         url: "https://cincinnati.craigslist.org/search/laf",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/community-hobbies.jpg",
@@ -324,6 +365,7 @@ export const categoriesData = {
         title: "Hobbies",
         description: "Join local hobby groups.",
         url: "https://cincinnati.craigslist.org/search/act",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/community-news.jpg",
@@ -331,6 +373,7 @@ export const categoriesData = {
         title: "News & Politics",
         description: "Discuss news and politics.",
         url: "https://cincinnati.craigslist.org/search/pol",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/community-help.jpg",
@@ -338,6 +381,7 @@ export const categoriesData = {
         title: "Help",
         description: "Request or offer help locally.",
         url: "https://cincinnati.craigslist.org/search/ccc",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/community-upcoming.jpg",
@@ -345,6 +389,7 @@ export const categoriesData = {
         title: "Upcoming",
         description: "Discover upcoming events.",
         url: "https://cincinnati.craigslist.org/search/eve",
+        price: "$0"
       },
     ],
   },
@@ -359,6 +404,7 @@ export const categoriesData = {
         title: "General",
         description: "General discussion topics.",
         url: "https://forums.craigslist.org/?areaID=35",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/forum-relationship.jpg",
@@ -366,6 +412,7 @@ export const categoriesData = {
         title: "Relationship",
         description: "Discuss relationships and advice.",
         url: "https://forums.craigslist.org/?areaID=35&forumID=1926",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/forum-arts.jpg",
@@ -373,6 +420,7 @@ export const categoriesData = {
         title: "Arts & Humanities",
         description: "Explore arts and humanities topics.",
         url: "https://forums.craigslist.org/?areaID=35&forumID=49",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/forum-legal.jpg",
@@ -380,6 +428,7 @@ export const categoriesData = {
         title: "Legal",
         description: "Discuss legal concerns and queries.",
         url: "https://forums.craigslist.org/?areaID=35&forumID=73",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/forum-diet.jpg",
@@ -387,6 +436,7 @@ export const categoriesData = {
         title: "Diet",
         description: "Talk about diets and healthy living.",
         url: "https://forums.craigslist.org/?areaID=35&forumID=122",
+        price: "$0"
       },
       {
         image: "/assets/img/unsplash/forum-tech.jpg",
@@ -394,6 +444,7 @@ export const categoriesData = {
         title: "Tech",
         description: "Technology discussions and tips.",
         url: "https://forums.craigslist.org/?areaID=35&forumID=34",
+        price: "$0"
       },
     ],
   },
