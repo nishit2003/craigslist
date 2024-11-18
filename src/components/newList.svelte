@@ -11,12 +11,58 @@
   function handleSubmit() {
     // Handle form submission logic here
     console.log('Form submitted');
-    onClose(); // Close the modal after submission, if desired
+    showConfirmation = true; // Show confirmation animation
+    showModal = false; // Close the modal
+    setTimeout(() => {
+      showConfirmation = false; // Hide confirmation animation after 3 seconds
+    }, 3000);
   }
+
+  let showConfirmation = false; // Controls the visibility of the confirmation animation
+
 </script>
 
 <style>
   /* Modal styles (same as previous implementation) */
+
+  .confirmation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #4caf50;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 2000;
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s 2.5s ease-in-out;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -55%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, -45%);
+    }
+  }
+
   .modal-background {
     position: fixed;
     top: 0;
@@ -119,38 +165,6 @@
   }
 </style>
 
-<!-- {#if showModal}
-  <div class="modal-background" on:click={handleModalClose}>
-    <div class="modal-content">
-      <button class="close-button" on:click={onClose}>&times;</button>
-      <h2>Create New Listing</h2>
-      <form on:submit|preventDefault={handleSubmit}>
-        <div class="form-group">
-          <label for="image">Image</label>
-          <input type="file" id="image" accept="image/*" />
-        </div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <select id="category">
-            <option value="for-sale">For Sale</option>
-            <option value="housing">Housing</option>
-            <option value="jobs">Jobs</option>
-            <option value="gigs">Gigs</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="price">Price</label>
-          <input type="number" id="price" placeholder="Enter price" />
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <textarea id="description" rows="4" placeholder="Enter details"></textarea>
-        </div>
-        <button type="submit" class="submit-button">Submit</button>
-      </form>
-    </div>
-  </div>
-{/if} -->
 
 
 {#if showModal}
@@ -186,5 +200,8 @@
   </div>
 {/if}
 
+{#if showConfirmation}
+  <div class="confirmation">🎉 Your listing has been successfully created!</div>
+{/if}
 
 
