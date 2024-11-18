@@ -1,5 +1,5 @@
 <script>
-  import SearchModal from "./SearchModal.svelte";
+  import SearchModal from "./searchmodal.svelte";
 
   let searchQuery = ""; // User input for search
   let modalOpen = false; // Controls modal visibility
