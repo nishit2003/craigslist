@@ -306,6 +306,8 @@ export const categoriesData = {
       },
     ],
   },
+
+  // "Community" category with subcategories.
   community: {
     title: "community",
     categories: [
@@ -346,6 +348,8 @@ export const categoriesData = {
       },
     ],
   },
+
+  // "Discussion Forums" category with subcategories.
   forum: {
     title: "discussion forums",
     categories: [
