@@ -17,7 +17,7 @@
   const carouselImages = [
     { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium"  , Desc: "Enjoy a evening of hip-hop and pop music", Date: "Novermber 24" },
     { src: thriftingImg, title: "Thrift Shop", Venue: "Panera Bread Backyard", Desc: "Amazing Deals Await" , Date: "Novermber 25"},
-    { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium", Desc: "Enjoy a evening of old-melody music" , Date: "Novermber 25"},
+    { src: concertImg, title: "Live Concert", Venue: "@Probasco Auditorium", Desc: "Enjoy a evening of old-melody music" , Date: "Novermber 26"},
   ];
 
   const events = [

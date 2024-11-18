@@ -17,6 +17,7 @@
 <style>
   /* Modal Overlay */
   .modalOverlay {
+    color: black;
     position: fixed;
     top: 0;
     left: 0;
