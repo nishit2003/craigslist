@@ -47,8 +47,8 @@
     border-radius: 8px;
     padding: 20px;
     max-width: 500px;
-    width: 120%;
-    max-height: 70vh; /* Restrict modal height to 70% of viewport height */
+    width: 100%;
+    max-height: 100vh; /* Restrict modal height to 70% of viewport height */
     /* overflow-y: auto; Add scrolling for content that exceeds max height */
     text-align: center;
     position: relative;
@@ -60,9 +60,10 @@
     top: 10px;
     right: 10px;
     border: none;
-    background: transparent;
-    font-size: 20px;
+    background: #4E1E86;
+    font-size: 10px;
     cursor: pointer;
+    color: white;
   }
 
   .modal-image {
