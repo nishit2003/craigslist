@@ -12,6 +12,20 @@
     event.preventDefault(); // Prevent default anchor behavior
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
   }
+  // State to track if any modal is open
+  let isModalOpen = false;
+
+  // Handlers to update modal state
+  function handleModalOpen() {
+    isModalOpen = true;
+    document.body.classList.add('modal-open');
+  }
+
+  function handleModalClose() {
+    isModalOpen = false;
+    document.body.classList.remove('modal-open');
+  }
+
 </script>
 
 <style>

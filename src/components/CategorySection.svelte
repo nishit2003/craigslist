@@ -27,6 +27,13 @@
     selectedCategory = category;
     modalOpen = true;
   }
+
+// Prevent background scrolling when modal is open
+  $: if (modalOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 </script>
 
 <style>

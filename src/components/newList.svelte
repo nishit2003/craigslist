@@ -36,7 +36,7 @@
     border-radius: 8px;
     font-size: 1.2rem;
     text-align: center;
-    z-index: 1000;
+    z-index: 3000;
     animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s 2.5s ease-in-out;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   }
@@ -63,41 +63,56 @@
     }
   }
 
-  .modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-in-out;
-    color: #4e1e86;
-    background-color: #E7EAEE;
-  }
+ /* Example styles in newlist.svelte */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000; /* Ensure this is higher than footer's z-index */
+  padding: 20px;
+}
 
-  .modal-content {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.3s ease-in-out;
-  }
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-in-out;
+  position: relative;
+  z-index: 3001; /* Ensure it's above the backdrop */
+}
+
+.confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #4caf50;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 3002; /* Above the modal */
+}
 
   .close-button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #333;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: #4E1E86;
+    font-size: 10px;
+    cursor: pointer;
+    color: white;
   }
 
   .form-group {
