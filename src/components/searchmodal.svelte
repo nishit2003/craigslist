@@ -1,7 +1,11 @@
 <script>
+  import { onMount } from 'svelte';
+
   export let isOpen = false; // Controls modal visibility
   export let query = ""; // User search query
   export let filter = "All"; // Category filter
+
+  let modalElement;
 
   const craigslistPaths = {
     All: "sss", // General search
@@ -45,7 +49,10 @@
       newResults.push({
         image: getRandomImage(),
         title: randomTitles[Math.floor(Math.random() * randomTitles.length)],
-        description: randomDescriptions[Math.floor(Math.random() * randomDescriptions.length)],
+        description:
+          randomDescriptions[
+            Math.floor(Math.random() * randomDescriptions.length)
+          ],
         price: `$${(Math.random() * 100 + 1).toFixed(2)}`,
       });
     }
@@ -63,13 +70,42 @@
     isOpen = false; // Close the modal
     location.reload(); // Reload the page to reset the search
   }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  }
+
+  onMount(() => {
+    if (isOpen && modalElement) {
+      modalElement.focus();
+    }
+  });
 </script>
 
 {#if isOpen}
-  <div class="modal-overlay" on:click={closeModal}>
-    <div class="modal" on:click|stopPropagation>
-      <button class="close-btn" on:click={closeModal}>✖</button>
-      <h2 class="query-text">Best search results for: <b>{query || "No query entered"}</b></h2>
+  <div
+    class="modal-overlay"
+    on:click={closeModal}
+    role="button"
+    tabindex="0"
+    aria-label="Close modal"
+    on:keydown={handleKeydown}
+  >
+    <div
+      class="modal"
+      on:click|stopPropagation
+      role="dialog"
+      aria-modal="true"
+      tabindex="0"
+      on:keydown={handleKeydown}
+      bind:this={modalElement}
+    >
+      <button class="close-btn" on:click={closeModal} aria-label="Close modal">✖</button>
+      <h2 class="query-text">
+        Best search results for: <b>{query || "No query entered"}</b>
+      </h2>
       <a href={getCraigslistLink()} target="_blank" class="craigslist-link">
         Go to Craigslist results
       </a>
@@ -116,14 +152,19 @@
     overflow: hidden;
   }
 
+  .modal:focus {
+    outline: none;
+  }
+
   .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     border: none;
-    background: transparent;
-    font-size: 18px;
+    background: #4E1E86;
+    font-size: 10px;
     cursor: pointer;
+    color: white;
   }
 
   .query-text {
