@@ -191,23 +191,6 @@
   display: inline-block; /* Ensure horizontal alignment */
 }
 
-  /* ################# */
-
-
-  /* Menu Items */
-  .menuItem > a {
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
-    font-family: 'Fira Code', monospace;
-    font-size: 16px; /* Reduced font size */
-    transition: color 0.3s;
-  }
-
-  .menuItem > a:hover {
-    color: purple;
-  }
-
   /* Responsive Design */
   @media (max-width: 768px) {
     .navMenu {

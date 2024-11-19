@@ -42,20 +42,6 @@
   z-index: 3001; /* Ensure it's above the backdrop */
 }
 
-.confirmation {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #4caf50;
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  text-align: center;
-  z-index: 3002; /* Above the modal */
-}
-
   .close-button {
     position: absolute;
     top: 10px;
