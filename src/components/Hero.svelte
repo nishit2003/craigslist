@@ -6,6 +6,13 @@
   let selectedFilter = "All"; // Default filter
 
   const filters = ['All', 'Cars', 'Jobs', 'Housing', 'Services', 'Items for Sale'];
+  
+  // Prevent background scrolling when modal is open
+  $: if (modalOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 
   const craigslistPaths = {
     All: "sss", // General search

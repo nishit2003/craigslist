@@ -143,9 +143,9 @@
   .modal {
     background: #fff;
     border-radius: 8px;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
-    max-height: 60%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -197,7 +197,7 @@
 
   .results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 20px;
   }
 
@@ -207,6 +207,7 @@
     padding: 10px;
     text-align: center;
     background: #f9f9f9;
+    border-color: #4E1E86;
   }
 
   .result-image {
