@@ -1,7 +1,6 @@
 <!-- src/components/CategorySection.svelte -->
 
 <script>
-	// import { color } from './../../node_modules/flowbite-svelte/dist/badge/Badge.svelte.d.ts';
   import Carousel from 'svelte-flickity';
   import Catmodel from './catmodel.svelte';
 
@@ -17,7 +16,6 @@
     pageDots: false, // Hide page dots for a cleaner look
     prevNextButtons: true, // Show navigation buttons
     cellAlign: 'left', // Align cells to the left
-    // Add more Flickity options as needed
   };
 
   let modalOpen = false; // Controls modal visibility
@@ -110,16 +108,6 @@
     color: #555;
   }
 
-  /* Link Styles */
-  a {
-    text-decoration: none;
-    color: inherit; /* Inherit text color */
-  }
-
-  a:focus {
-    outline: 2px solid purple;
-    outline-offset: 2px;
-  }
 
   /* Responsive Adjustments */
   @media (max-width: 1600px) {

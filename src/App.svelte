@@ -29,9 +29,6 @@
 </script>
 
 <style>
-  
-  /* Import Flickity CSS globally */
-  @import 'flickity/dist/flickity.min.css';
 
   /* Enable smooth scrolling */
   :global(html) {
@@ -72,11 +69,6 @@
 
   .to-nav:hover {
     text-decoration: underline;
-  }
-
-  /* Optional: Adjust z-index to ensure content is not hidden behind fixed nav */
-  #nav {
-    z-index: 100;
   }
 
   /* Additional styling for "back to top" link margin */
