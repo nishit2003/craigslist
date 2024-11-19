@@ -1,22 +1,46 @@
 <script>
-  export let isOpen = false; // Controls modal visibility
-  export let category = {}; // The category data to display
+import { onMount } from 'svelte';
 
-  function closeModal() {
-    isOpen = false;
-   location.reload();
+export let isOpen = false; // Controls modal visibility
+export let category = {}; // The category data to display
+
+let modalElement;
+
+function closeModal() {
+  isOpen = false;
+  location.reload();
+}
+
+function handleKeydown(event) {
+  if (event.key === 'Escape' && isOpen) {
+    closeModal();
   }
+}
+
+onMount(() => {
+  if (isOpen && modalElement) {
+    modalElement.focus();
+  }
+});
 </script>
 
 {#if isOpen}
-  <div class="modal-overlay" on:click={closeModal}>
-    <div class="modal" on:click|stopPropagation>
-      <button class="close-btn" on:click={closeModal}>✖</button>
+  <div class="modal-overlay" on:click={closeModal} aria-hidden="true">
+    <div
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      tabindex="0"
+      on:click|stopPropagation
+      on:keydown={handleKeydown}
+      bind:this={modalElement}
+    >
+      <button class="close-btn" on:click={closeModal} aria-label="Close modal">✖</button>
       <img src={category.image} alt={category.alt} class="modal-image" />
       <h2 class="modal-title">{category.title}</h2>
-      <p class="modal-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-      
-      <!-- {category.description || "No description available"} -->
+      <p class="modal-description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+      </p>
       <p class="modal-price"><strong>Price:</strong> {category.price || "N/A"}</p>
       {#if category.url}
         <a href={category.url} target="_blank" class="modal-link">
@@ -102,4 +126,9 @@
   .modal-link:hover {
     text-decoration: underline;
   }
+
+  .modal:focus {
+    outline: none;
+  }
+  
 </style>

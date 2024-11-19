@@ -229,25 +229,6 @@
       </div>
     </div>
 
-    <!-- Bottom Navigation -->
-    <!-- <div class="bottomNav">
-      <ul class="navMenu">
-        <li class="menuItem"><a href="#for-sale" on:click={handleTabClick}><strong>For Sale</strong></a></li>
-        <li class="menuItem"><a href="#housing" on:click={handleTabClick}><strong>Housing</strong></a></li>
-        <li class="menuItem"><a href="#jobs" on:click={handleTabClick}><strong>Jobs</strong></a></li>
-        <li class="menuItem"><a href="#gigs" on:click={handleTabClick}><strong>Gigs</strong></a></li>
-        <li class="menuItem"><a href="#services" on:click={handleTabClick}><strong>Services</strong></a></li>
-        <li class="menuItem"><a href="#community" on:click={handleTabClick}><strong>Community</strong></a></li>
-        <li class="menuItem"><a href="#forum" on:click={handleTabClick}><strong>Discussion Forums</strong></a></li>
-        <li class="menuItem">
-          <button class="change-location-button" on:click={toggleLocationModal} on:keydown={(e) => { if (e.key === 'Enter') toggleLocationModal(); }}>
-            <strong>Change Location</strong>
-          </button>          
-        </li>
-      </ul>
-    </div>
-  </div> -->
-
 
   <div class="bottomNav">
     <ul class="navMenu">

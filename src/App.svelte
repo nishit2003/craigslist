@@ -49,11 +49,11 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Center child components horizontally */
-    padding-top: 120px; /* Adjust based on navbar height */
-    padding-bottom: 60px; /* Space for the fixed footer */
+    padding-top: 10px; /* Adjust based on navbar height */
+    padding-bottom: 30px; /* Space for the fixed footer */
     box-sizing: border-box;
     width: 100%;
-    max-width: 1600px; /* Increased from 1200px to allow wider carousels */
+    max-width: 1600px;
     margin: 0 auto;
   }
 
@@ -73,7 +73,7 @@
 
   /* Additional styling for "back to top" link margin */
   .mb-40 {
-    margin-bottom: 40px;
+    margin-bottom: 100px;
   }
 </style>
 

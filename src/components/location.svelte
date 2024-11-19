@@ -1,9 +1,12 @@
 <script>
+  import { onMount } from 'svelte';
+
   export let showModal = false;
   export let onClose;
 
   let locationInput = ""; // To capture the user's input
   let errorMessage = ""; // To display the error message
+  let modalElement;
 
   // List of Cincinnati ZIP codes
   const cincinnatiZipCodes = Array.from({ length: 99 }, (_, i) => `452${String(i + 1).padStart(2, '0')}`);
@@ -30,6 +33,18 @@
       locationInput = ""; // Clear the input field for retry
     }
   }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  }
+
+  onMount(() => {
+    if (showModal && modalElement) {
+      modalElement.focus();
+    }
+  });
 </script>
 
 <style>
@@ -51,13 +66,17 @@
   /* Modal Content */
   .modalContent {
     background-color: white;
-    padding: 40px 20px 20px 20px; /* Increased top padding to accommodate close button */
+    padding: 40px 20px 20px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 90%;
     text-align: center;
-    position: relative; /* Added to create positioning context for close button */
+    position: relative;
+  }
+
+  .modalContent:focus {
+    outline: none;
   }
 
   .modalContent h2 {
@@ -122,8 +141,23 @@
 </style>
 
 {#if showModal}
-  <div class="modalOverlay" on:click={closeModal}>
-    <div class="modalContent" on:click|stopPropagation>
+  <div
+    class="modalOverlay"
+    on:click={closeModal}
+    role="button"
+    tabindex="0"
+    aria-label="Close Modal"
+    on:keydown={handleKeydown}
+  >
+    <div
+      class="modalContent"
+      role="dialog"
+      aria-modal="true"
+      tabindex="0"
+      on:click|stopPropagation
+      on:keydown={handleKeydown}
+      bind:this={modalElement}
+    >
       <button class="close-button" on:click={closeModal} aria-label="Close Modal">&times;</button>
       <h2>Enter your location</h2>
       <p>Please enter your zip code or city:</p>
