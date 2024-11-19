@@ -62,7 +62,7 @@
 
   /* Optional: Adjust z-index to ensure content is not hidden behind fixed nav */
   #nav {
-    z-index: 1000;
+    z-index: 100;
   }
 
   /* Additional styling for "back to top" link margin */

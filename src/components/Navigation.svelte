@@ -58,7 +58,7 @@
     position: fixed; /* Fix the navbar at the top */
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure navbar stays on top */
+    z-index: 100; /* Ensure navbar stays on top */
     box-sizing: border-box;
   }
 

@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 1000;
     animation: fadeIn 0.3s ease-in-out;
     color: #4e1e86;
   }

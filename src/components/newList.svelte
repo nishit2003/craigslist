@@ -36,7 +36,7 @@
     border-radius: 8px;
     font-size: 1.2rem;
     text-align: center;
-    z-index: 2000;
+    z-index: 1000;
     animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s 2.5s ease-in-out;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   }
@@ -73,7 +73,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 1000;
     animation: fadeIn 0.3s ease-in-out;
     color: #4e1e86;
     background-color: #E7EAEE;

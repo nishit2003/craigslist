@@ -8,7 +8,7 @@
     width: 100%;
     background-color: #E7EAEE;
     box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 100;
     box-sizing: border-box;
   }
 
